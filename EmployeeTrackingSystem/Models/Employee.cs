@@ -11,6 +11,7 @@ namespace EmployeeTrackingSystem.Models
     {
         [Key]
         public string Id { get; set; }
+        [DisplayName("Full Name")]
         public string Name { get; set; }
         [EmailAddress]
         public string Email { get; set; }
