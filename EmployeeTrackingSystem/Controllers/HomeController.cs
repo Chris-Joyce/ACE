@@ -87,7 +87,7 @@ namespace EmployeeTrackingSystem.Controllers
             }
                 //worksheet.Cells["L2:M50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
                 worksheet.Cells["A1:XFD50"].AutoFitColumns();
-                worksheet.Cells["H2:I50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+                worksheet.Cells["H2:I6"].Format = DateCellFormat;
                 fileContents = package.GetAsByteArray();
             }
 
