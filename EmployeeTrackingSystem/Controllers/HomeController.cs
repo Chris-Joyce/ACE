@@ -85,9 +85,9 @@ namespace EmployeeTrackingSystem.Controllers
                     objRange.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     objRange.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
             }
-                worksheet.Cells["H2:I50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
-                worksheet.Cells["L2:M50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+                //worksheet.Cells["L2:M50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
                 worksheet.Cells["A1:XFD50"].AutoFitColumns();
+                worksheet.Cells["H2:I50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
                 fileContents = package.GetAsByteArray();
             }
 
