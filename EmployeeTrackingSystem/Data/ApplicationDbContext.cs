@@ -14,6 +14,7 @@ namespace EmployeeTrackingSystem.Data
             : base(options)
         {
         }
-        public DbSet<EmployeeTrackingSystem.Models.Employee> Employee { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<EmployeeTrackingSystem.Models.Certification> Certification { get; set; }
     }
 }
