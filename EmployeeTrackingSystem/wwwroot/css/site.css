@@ -5,6 +5,17 @@ body {
     padding-bottom: 20px;
 }
 
+/* basic positioning */
+.legend { list-style: none; }
+.legend li { float: left; margin-right: 10px; }
+.legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+/* your colors */
+.legend .good { background-color: #00FF00; }
+.legend .lessthan30 { background-color: #FFFF00; }
+.legend .lessthan14 { background-color: #FFC500; }
+.legend .lessthan7 { background-color: #FF6500; }
+.legend .expired { background-color: #FF0000; }
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
