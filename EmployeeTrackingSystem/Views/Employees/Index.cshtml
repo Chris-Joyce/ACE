@@ -9,7 +9,8 @@
      @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
      {
         <p>
-            <a asp-action="Create">Create New</a>
+            <input type="button" value="Create New" class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Employees")'" />
+            //<a asp-action="Create">Create New</a>
         </p>
      }
 <table class="table">
