@@ -74,10 +74,13 @@ namespace EmployeeTrackingSystem.Controllers
                     worksheet.Cells[row, 8].Value = employeeList[i].DateOfBirth;
                     worksheet.Cells[row, 8].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 9].Value = employeeList[i].HireDate;
+                    worksheet.Cells[row, 9].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 10].Value = employeeList[i].LicenseNumber;
                     worksheet.Cells[row, 11].Value = employeeList[i].CertificationType;
                     worksheet.Cells[row, 12].Value = employeeList[i].CertificationStartDate;
+                    worksheet.Cells[row, 12].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 13].Value = employeeList[i].CertificationEndDate;
+                    worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     i++;
                 }
                 using (ExcelRange objRange = worksheet.Cells["A1:XFD1"])
