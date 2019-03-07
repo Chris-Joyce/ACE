@@ -64,5 +64,5 @@
     }
 </table>
 </br>
-<input type="button" class="btn btn-primary" asp-action="Download" value="Download Report"/>
+<input type="button" value="Download Report" onclick="location.href='@Url.Action("Download", "Home")'" />
 <a asp-action="Download">Download Report</a>
