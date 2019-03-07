@@ -72,7 +72,7 @@ namespace EmployeeTrackingSystem.Controllers
                     worksheet.Cells[row, 6].Value = employeeList[i].Zip;
                     worksheet.Cells[row, 7].Value = employeeList[i].Phone;
                     worksheet.Cells[row, 8].Value = employeeList[i].DateOfBirth;
-                    worksheet.Cells[row, 8].Style.Numberformat.Format = "yyyy-mm-dd";
+                    worksheet.Cells[row, 8].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 9].Value = employeeList[i].HireDate;
                     worksheet.Cells[row, 10].Value = employeeList[i].LicenseNumber;
                     worksheet.Cells[row, 11].Value = employeeList[i].CertificationType;
