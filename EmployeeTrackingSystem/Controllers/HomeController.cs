@@ -89,9 +89,7 @@ namespace EmployeeTrackingSystem.Controllers
                     objRange.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     objRange.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
             }
-                //worksheet.Cells["L2:M50"].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
                 worksheet.Cells["A1:XFD50"].AutoFitColumns();
-                //worksheet.Cells["H2:I6"].Format = DateCellFormat;
                 fileContents = package.GetAsByteArray();
             }
 
@@ -106,34 +104,6 @@ namespace EmployeeTrackingSystem.Controllers
                 fileDownloadName: DateTime.Now.ToString("MM_dd_yy") + "_Report.xlsx"
             );
         }
-
-        //public IActionResult Download()
-        //{
-        //    byte[] fileContents;
-
-        //    using (var package = new ExcelPackage())
-        //    {
-        //        var worksheet = package.Workbook.Worksheets.Add("Sheet1");
-
-        //        // Put whatever you want here in the sheet
-        //        // For example, for cell on row1 col1
-
-        //        worksheet.Cells[1, 1].Value = "Long text";
-        //        worksheet.Cells[1, 1].Style.Border.Top.Style = ExcelBorderStyle.Hair;
-        //        fileContents = package.GetAsByteArray();
-        //    }
-
-        //    if (fileContents == null || fileContents.Length == 0)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return File(
-        //        fileContents: fileContents,
-        //        contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        //        fileDownloadName: "Report.xlsx"
-        //    );
-        //}
 
         [Authorize(Roles = "Admin, Manager")]
         public IActionResult Email()
