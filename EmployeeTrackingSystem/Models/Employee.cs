@@ -32,7 +32,7 @@ namespace EmployeeTrackingSystem.Models
         public int LicenseNumber { get; set; }
         [DisplayName("Certification Start Date")]
         [DataType(DataType.Date)]
-        public DateTime Cert1StartDate { get; set; }
+        public DateTime Cert1StartDate { get; set; }//rename all certs and titles
         [DisplayName("Certification End Date")]
         [DataType(DataType.Date)]
         public DateTime Cert1EndDate { get; set; }
@@ -48,5 +48,15 @@ namespace EmployeeTrackingSystem.Models
         [DisplayName("Certification End Date")]
         [DataType(DataType.Date)]
         public DateTime Cert3EndDate { get; set; }
+        //public bool Title1 { get; set; }
+        //public bool Title2 { get; set; }
+        //public bool Title3 { get; set; }
+        //public bool Title4 { get; set; }
+        //public bool Title5 { get; set; }
+        //public bool Title6 { get; set; }
+        //public bool Title7 { get; set; }
+        //public bool Title8 { get; set; }
+        //public bool Title9 { get; set; }
+        //public bool Title10 { get; set; }
     }
 }

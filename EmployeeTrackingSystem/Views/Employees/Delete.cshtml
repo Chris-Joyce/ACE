@@ -73,7 +73,7 @@
         </dd>
         @if (Model.RequiredCerts != null)
         {
-            if (Model.RequiredCerts.Contains("1"))
+            if (Model.RequiredCerts.Contains("1")) //if(title1) or all titles that require this cert
             {
                 <dt>
                     Certification Type
@@ -94,7 +94,7 @@
                     @Html.DisplayFor(model => model.Cert1EndDate)
                 </dd>
             }
-            if (Model.RequiredCerts.Contains("2"))
+            if (Model.RequiredCerts.Contains("2")) //if(title2) or all titles that require this cert
             {
                 <dt>
                     Certification Type
@@ -115,7 +115,7 @@
                     @Html.DisplayFor(model => model.Cert2EndDate)
                 </dd>
             }
-            if (Model.RequiredCerts.Contains("3"))
+            if (Model.RequiredCerts.Contains("3")) //if(title3) or all titles that require this cert
             {
                 <dt>
                     Certification Type
