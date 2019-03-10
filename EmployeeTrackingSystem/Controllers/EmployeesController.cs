@@ -57,7 +57,7 @@ namespace EmployeeTrackingSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,CertificationType,CertificationStartDate,CertificationEndDate")] Employee employee)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,RequiredCerts,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,CertificationType,CertificationStartDate,CertificationEndDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace EmployeeTrackingSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,CertificationType,CertificationStartDate,CertificationEndDate")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,RequiredCerts,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,Cert1StartDate,Cert1EndDate,Cert2StartDate,Cert2EndDate,Cert3StartDate,Cert3EndDate")] Employee employee)
         {
             if (id != employee.Id)
             {
@@ -116,6 +116,23 @@ namespace EmployeeTrackingSystem.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
+            }
+            return View(employee);
+        }
+
+        // GET: Employees/Certifications/5
+        [Authorize(Roles = "Admin, Manager")]
+        public async Task<IActionResult> Certifications(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var employee = await _context.Employee.FindAsync(id);
+            if (employee == null)
+            {
+                return NotFound();
             }
             return View(employee);
         }

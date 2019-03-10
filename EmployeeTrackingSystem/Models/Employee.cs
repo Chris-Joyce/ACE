@@ -15,6 +15,7 @@ namespace EmployeeTrackingSystem.Models
         public string Name { get; set; }
         [EmailAddress]
         public string Email { get; set; }
+        public string RequiredCerts { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -29,13 +30,23 @@ namespace EmployeeTrackingSystem.Models
         public DateTime HireDate { get; set; }
         [DisplayName("License Number")]
         public int LicenseNumber { get; set; }
-        [DisplayName("Certification Type")]
-        public string CertificationType { get; set; }
         [DisplayName("Certification Start Date")]
         [DataType(DataType.Date)]
-        public DateTime CertificationStartDate { get; set; }
+        public DateTime Cert1StartDate { get; set; }
         [DisplayName("Certification End Date")]
         [DataType(DataType.Date)]
-        public DateTime CertificationEndDate { get; set; }
+        public DateTime Cert1EndDate { get; set; }
+        [DisplayName("Certification Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime Cert2StartDate { get; set; }
+        [DisplayName("Certification End Date")]
+        [DataType(DataType.Date)]
+        public DateTime Cert2EndDate { get; set; }
+        [DisplayName("Certification Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime Cert3StartDate { get; set; }
+        [DisplayName("Certification End Date")]
+        [DataType(DataType.Date)]
+        public DateTime Cert3EndDate { get; set; }
     }
 }

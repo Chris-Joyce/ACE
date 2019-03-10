@@ -24,6 +24,12 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.RequiredCerts)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RequiredCerts)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
         <dd>
@@ -71,24 +77,72 @@
         <dd>
             @Html.DisplayFor(model => model.LicenseNumber)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CertificationType)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CertificationType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CertificationStartDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CertificationStartDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CertificationEndDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CertificationEndDate)
-        </dd>
+        @if (Model.RequiredCerts != null)
+        {
+            if (Model.RequiredCerts.Contains("1"))
+            {
+                <dt>
+                    Certification Type
+                </dt>
+                <dd>
+                    Cert 1
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cert1StartDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cert1StartDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cert1EndDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cert1EndDate)
+                </dd>
+            }
+            if (Model.RequiredCerts.Contains("2"))
+            {
+                <dt>
+                    Certification Type
+                </dt>
+                <dd>
+                    Cert 2
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cert2StartDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cert2StartDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cert2EndDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cert2EndDate)
+                </dd>
+            }
+            if (Model.RequiredCerts.Contains("3"))
+            {
+                <dt>
+                    Certification Type
+                </dt>
+                <dd>
+                    Cert 3
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cert3StartDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cert3StartDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cert3EndDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cert3EndDate)
+                </dd>
+            }
+        }
     </dl>
 </div>
 <div>
