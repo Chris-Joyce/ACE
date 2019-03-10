@@ -24,6 +24,12 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.RequiredCerts)@*Replace this with "Title(s)"*@
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RequiredCerts)@*Replace this list of titles that are true*@
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
         <dd>
@@ -135,7 +141,7 @@
                 <dd>
                     @Html.DisplayFor(model => model.Cert3EndDate)
                 </dd>
-            }
+            }//if statements for the rest of the certifications
         }
     </dl>
     <form asp-action="Delete">

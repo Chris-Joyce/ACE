@@ -67,6 +67,7 @@ namespace EmployeeTrackingSystem.Controllers
                 {
                     worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 2].Value = employeeList[i].Email;
+                    //employees titles and shift all collumns up by one
                     worksheet.Cells[row, 3].Value = employeeList[i].Address;
                     worksheet.Cells[row, 4].Value = employeeList[i].City;
                     worksheet.Cells[row, 5].Value = employeeList[i].State;
@@ -107,38 +108,6 @@ namespace EmployeeTrackingSystem.Controllers
                     i++;
                 }
 
-                //int i = 0;
-                //for (int row = 2; row <= totalRows + 1; row++)
-                //{
-                //    worksheet.Cells[row, 1].Value = employeeList[i].Name;
-                //    worksheet.Cells[row, 2].Value = employeeList[i].Email;
-                //    worksheet.Cells[row, 3].Value = employeeList[i].Address;
-                //    worksheet.Cells[row, 4].Value = employeeList[i].City;
-                //    worksheet.Cells[row, 5].Value = employeeList[i].State;
-                //    worksheet.Cells[row, 6].Value = employeeList[i].Zip;
-                //    worksheet.Cells[row, 7].Value = employeeList[i].Phone;
-                //    worksheet.Cells[row, 8].Value = employeeList[i].DateOfBirth;
-                //    worksheet.Cells[row, 8].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 9].Value = employeeList[i].HireDate;
-                //    worksheet.Cells[row, 9].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 10].Value = employeeList[i].LicenseNumber;
-                //    worksheet.Cells[row, 11].Value = "cert 1";
-                //    worksheet.Cells[row, 12].Value = employeeList[i].Cert1StartDate;
-                //    worksheet.Cells[row, 12].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 13].Value = employeeList[i].Cert1EndDate;
-                //    worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 14].Value = "cert 2";
-                //    worksheet.Cells[row, 15].Value = employeeList[i].Cert2StartDate;
-                //    worksheet.Cells[row, 15].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 16].Value = employeeList[i].Cert2EndDate;
-                //    worksheet.Cells[row, 16].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 17].Value = "cert 3";
-                //    worksheet.Cells[row, 18].Value = employeeList[i].Cert3StartDate;
-                //    worksheet.Cells[row, 18].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    worksheet.Cells[row, 19].Value = employeeList[i].Cert3EndDate;
-                //    worksheet.Cells[row, 19].Style.Numberformat.Format = "mm/dd/yyyy";
-                //    i++;
-                //}
                 using (ExcelRange objRange = worksheet.Cells["A1:XFD1"])
                 {
                     objRange.Style.Font.Bold = true;

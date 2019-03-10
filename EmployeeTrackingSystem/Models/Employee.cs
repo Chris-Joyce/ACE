@@ -48,6 +48,48 @@ namespace EmployeeTrackingSystem.Models
         [DisplayName("Certification End Date")]
         [DataType(DataType.Date)]
         public DateTime Cert3EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert4StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert4EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert5StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert5EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert6StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert6EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert7StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert7EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert8StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert8EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert9StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert9EndDate { get; set; }
+        //[DisplayName("Certification Start Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert10StartDate { get; set; }
+        //[DisplayName("Certification End Date")]
+        //[DataType(DataType.Date)]
+        //public DateTime Cert10endDate { get; set; }
         //public bool Title1 { get; set; }
         //public bool Title2 { get; set; }
         //public bool Title3 { get; set; }
