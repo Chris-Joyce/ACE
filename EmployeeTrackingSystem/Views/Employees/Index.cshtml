@@ -10,7 +10,7 @@
         /* basic positioning */
         .legend { list-style: none; }
         .legend li { float: left; margin-right: 10px; }
-        .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+        .legend span { border: 1px solid #ccc; float: left; width: 16px; height: 16px; margin: 2px; }
         /* your colors */
         .legend .good { background-color: #00FF00; }
         .legend .lessthan30 { background-color: #FFFF00; }
@@ -27,6 +27,7 @@
             <a asp-action="Create" class="btn btn-primary">Create New</a>
         </p>
      }
+     
 <ul class="legend">
     <li><span class="good"></span> Good</li>
     <li><span class="lessthan30"></span> Less than 30 days</li>
@@ -34,25 +35,7 @@
     <li><span class="lessthan7"></span> Less than 7 days</li>
     <li><span class="expired"></span> Expired</li>
 </ul>
-<table>
-    <tr>
-        <td bgcolor="#00FF00">
-            <strong>&nbsp;Good&nbsp;</strong>
-        </td>
-        <td bgcolor="#FFFF00">
-            <strong>&nbsp;Less than 30 days&nbsp;</strong>
-        </td>
-        <td bgcolor="#FFC500">
-            <strong>&nbsp;Less than 14 days&nbsp;</strong>
-        </td>
-        <td bgcolor="#FF6500">
-            <strong>&nbsp;Less than 7 days&nbsp;</strong>
-        </td>
-        <td bgcolor="#FF0000">
-            <font color="#FFFFFF"><strong>&nbsp;Expired&nbsp;</strong></font>
-        </td>
-    </tr>
-</table>
+
 <table class="table">
     <thead>
         <tr>
