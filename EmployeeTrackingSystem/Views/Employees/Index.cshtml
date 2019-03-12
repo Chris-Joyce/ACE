@@ -5,6 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<head>
+    <style>
+        /* basic positioning */
+        .legend { list-style: none; }
+        .legend li { float: left; margin-right: 10px; }
+        .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
+        /* your colors */
+        .legend .good { background-color: #00FF00; }
+        .legend .lessthan30 { background-color: #FFFF00; }
+        .legend .lessthan14 { background-color: #FFC500; }
+        .legend .lessthan7 { background-color: #FF6500; }
+        .legend .expired { background-color: #FF0000; }
+    </style>
+</head>
+     
 <h2><img src="~/images/ACElogo.jpg" alt="ACE" height="40" />@ViewData["Title"]</h2>
      @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
      {
@@ -12,6 +27,13 @@
             <a asp-action="Create" class="btn btn-primary">Create New</a>
         </p>
      }
+<ul class="legend">
+    <li><span class="good"></span> Good</li>
+    <li><span class="lessthan30"></span> Less than 30 days</li>
+    <li><span class="lessthan14"></span> Less than 14 days</li>
+    <li><span class="lessthan7"></span> Less than 7 days</li>
+    <li><span class="expired"></span> Expired</li>
+</ul>
 <table>
     <tr>
         <td bgcolor="#00FF00">
