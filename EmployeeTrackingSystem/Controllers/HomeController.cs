@@ -126,7 +126,7 @@ namespace EmployeeTrackingSystem.Controllers
             return File(
                 fileContents: fileContents,
                 contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                fileDownloadName: DateTime.Now.ToString("MM_dd_yy") + "_Report.xlsx"
+                fileDownloadName: DateTime.Now.ToString("MM_dd_yy") + "_Employee_Tracking_Report.xlsx"
             );
         }
 
