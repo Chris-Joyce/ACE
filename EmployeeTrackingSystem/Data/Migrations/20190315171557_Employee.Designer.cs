@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeTrackingSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190315160028_Employee")]
+    [Migration("20190315171557_Employee")]
     partial class Employee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,11 +26,17 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("APDSupportedEmployement");
+
+                    b.Property<bool>("APDSupportedLiving");
+
                     b.Property<string>("Address");
 
                     b.Property<DateTime>("AffidavitOfGoodMoralCharacterEndDate");
 
                     b.Property<DateTime>("AffidavitOfGoodMoralCharacterStartDate");
+
+                    b.Property<bool>("CBHT");
 
                     b.Property<string>("City");
 

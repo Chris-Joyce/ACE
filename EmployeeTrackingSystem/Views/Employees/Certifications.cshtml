@@ -24,6 +24,9 @@
             <input type="hidden" asp-for="Phone" />
             <input type="hidden" asp-for="DateOfBirth" />
             <input type="hidden" asp-for="LicenseNumber" />
+            <input type="hidden" asp-for="CBHT" />
+            <input type="hidden" asp-for="APDSupportedLiving" />
+            <input type="hidden" asp-for="APDSupportedEmployement" />
             <div class="form-group">
                 <label asp-for="DCFHippastartDate" class="control-label"></label>
                 <input asp-for="DCFHippastartDate" class="form-control" />
@@ -112,6 +115,22 @@
                 <span asp-validation-for="JSOLocalBGSEndDate" class="text-danger"></span>
             </div>
             <br />
+            @if (Model.CBHT)
+            {
+                //cbht certs
+            }
+            @if (Model.APDSupportedLiving && Model.APDSupportedEmployement)
+            {
+                //both apd certs
+            }
+            @if (Model.APDSupportedLiving && !Model.APDSupportedEmployement)
+            {
+                //APDSupportedLiving certs
+            }
+            @if (Model.APDSupportedEmployement && !Model.APDSupportedLiving)
+            {
+                //APDSupportedEmployement certs
+            }
             @*@if (Model.RequiredCerts != null)
         {
             if (Model.RequiredCerts.Contains("1"))

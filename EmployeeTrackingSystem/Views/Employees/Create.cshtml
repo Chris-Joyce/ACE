@@ -98,6 +98,23 @@
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label class="contain">
+                    <label asp-for="CBHT" class="control-label"></label>
+                    <input asp-for="CBHT" type="checkbox" />
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contain">
+                    <label asp-for="APDSupportedLiving" class="control-label"></label>
+                    <input asp-for="APDSupportedLiving" type="checkbox" />
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contain">
+                    <label asp-for="APDSupportedEmployement" class="control-label"></label>
+                    <input asp-for="APDSupportedEmployement" type="checkbox" />
+                    <span class="checkmark"></span>
+                </label>
+            </div>
             @*<div class="form-group">
                 <h2>Titles</h2>
                 <label class="contain">

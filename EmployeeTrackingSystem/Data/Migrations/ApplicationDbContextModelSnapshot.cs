@@ -24,11 +24,17 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("APDSupportedEmployement");
+
+                    b.Property<bool>("APDSupportedLiving");
+
                     b.Property<string>("Address");
 
                     b.Property<DateTime>("AffidavitOfGoodMoralCharacterEndDate");
 
                     b.Property<DateTime>("AffidavitOfGoodMoralCharacterStartDate");
+
+                    b.Property<bool>("CBHT");
 
                     b.Property<string>("City");
 

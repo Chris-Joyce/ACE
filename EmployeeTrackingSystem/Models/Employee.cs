@@ -49,7 +49,13 @@ namespace EmployeeTrackingSystem.Models
         //[DisplayName("Certification End Date")]
         //[DataType(DataType.Date)]
         //public DateTime Cert3EndDate { get; set; }
-    
+
+        //check boxes
+        public bool CBHT { get; set; }
+        [DisplayName("APD Supported Living")]
+        public bool APDSupportedLiving { get; set; }
+        [DisplayName("APD Supported Employement")]
+        public bool APDSupportedEmployement { get; set; }
 
         //All Employees have these
         [DisplayName("DCF Hippa Start Date")]
@@ -122,10 +128,5 @@ namespace EmployeeTrackingSystem.Models
         //[DisplayName("Certification End Date")]
         //[DataType(DataType.Date)]
         //public DateTime Cert10endDate { get; set; }
-        //public bool CBHT { get; set; }
-        //[DisplayName("APD Supported Living")]
-        //public bool APDSupportedLiving { get; set; }
-        //[DisplayName("APD Supported Employement")]
-        //public bool APDSupportedEmployement { get; set; }
     }
 }
