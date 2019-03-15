@@ -1,0 +1,32 @@
+﻿@*@using Microsoft.AspNetCore.Identity
+    @model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+    @inject UserManager<IdentityUser> UserManager
+
+    @{
+        ViewData["Title"] = "Edit";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Change Role</h2>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h4>Create a new account.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Role"></label>
+                    <select asp-for="Input.Role" class="form-control">
+                        <option>User</option>
+                        <option>Manager</option>
+                        <option>Admin</option>
+                    </select>
+                    <span asp-validation-for="Input.Role" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create User</button>
+            </form>
+        </div>
+    </div>*@
+

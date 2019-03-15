@@ -15,5 +15,6 @@ namespace EmployeeTrackingSystem.Data
         {
         }
         public DbSet<EmployeeTrackingSystem.Models.Employee> Employee { get; set; }
+        public DbSet<IdentityUser> IdentityUsers { get; set; }
     }
 }

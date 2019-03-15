@@ -13,8 +13,10 @@ namespace EmployeeTrackingSystem.Controllers
     public class AdminController : Controller
     {
         private ApplicationDbContext _application;
-        public AdminController(ApplicationDbContext application)
+        private readonly UserManager<IdentityUser> _userManager;
+        public AdminController(UserManager<IdentityUser> userManager, ApplicationDbContext application)
         {
+            _userManager = userManager;
             _application = application;
         }
 
@@ -23,6 +25,23 @@ namespace EmployeeTrackingSystem.Controllers
         {
             ViewData["Message"] = "Admin";
             return View(_application.Users.ToList());
+        }
+       
+        public async Task<IActionResult> ChangeRole(IdentityUser user)
+        {
+            if (await _userManager.IsInRoleAsync(user, "Admin"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "Admin");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "Manager"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "Manager");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "User"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "User");
+            }
+            return LocalRedirect("/Admin");
         }
     }
 }

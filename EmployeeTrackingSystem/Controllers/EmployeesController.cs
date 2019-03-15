@@ -57,7 +57,7 @@ namespace EmployeeTrackingSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,RequiredCerts,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,CertificationType,CertificationStartDate,CertificationEndDate")] Employee employee)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,Title,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,DCFHippastartDate,DCFHippaEndDate,VehicleRegistrationStartDate,VehicleRegistrationEndDate,VehicleInsuranceCardStartDate,VehicleInsuranceCardEndDate,YearlyEvaluationStartDate,YearlyEvaluationEndDate,TargetCaseManagmentStartDate,TargetCaseManagmentEndDate,AffidavitOfGoodMoralCharacterStartDate,AffidavitOfGoodMoralCharacterEndDate,FDLEBGSStartDate,FDLEBGSEndDate,JSOLocalBGSStartDate,JSOLocalBGSEndDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace EmployeeTrackingSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,RequiredCerts,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,Cert1StartDate,Cert1EndDate,Cert2StartDate,Cert2EndDate,Cert3StartDate,Cert3EndDate")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,Title,Address,City,State,Zip,Phone,DateOfBirth,HireDate,LicenseNumber,DCFHippastartDate,DCFHippaEndDate,VehicleRegistrationStartDate,VehicleRegistrationEndDate,VehicleInsuranceCardStartDate,VehicleInsuranceCardEndDate,YearlyEvaluationStartDate,YearlyEvaluationEndDate,TargetCaseManagmentStartDate,TargetCaseManagmentEndDate,AffidavitOfGoodMoralCharacterStartDate,AffidavitOfGoodMoralCharacterEndDate,FDLEBGSStartDate,FDLEBGSEndDate,JSOLocalBGSStartDate,JSOLocalBGSEndDate")] Employee employee)
         {
             if (id != employee.Id)
             {

@@ -16,9 +16,9 @@
             <th>
                 Role
             </th>
-            <th>
+            @*<th>
                 Change Role
-            </th>
+            </th>*@
         </tr>
     </thead>
     <tbody>
@@ -40,18 +40,14 @@
                 {
                     <th>User</th>
                 }
-                <td>
-                    <form method="post">
+                @*<td>
+                    <form asp-action="ChangeRole">
                         <div class="form-group">
-                            <select class="form-control">
-                                <option>Admin</option>
-                                <option>Manager</option>
-                                <option>User</option>
-                            </select>
                             <button type="submit" class="btn btn-primary">Update Role</button>
+                            <a asp-action="ChangeRole" asp-route-id="@user.Id">Edit</a>
                         </div>
                     </form>
-                </td>
+                </td>*@
             </tr>
         }
     </tbody>

@@ -23,12 +23,12 @@
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.RequiredCerts)@*Replace this with "Title(s)"*@
+        @*<dt>
+            @Html.DisplayNameFor(model => model.RequiredCerts)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.RequiredCerts)@*Replace this list of titles that are true*@
-        </dd>
+            @Html.DisplayFor(model => model.RequiredCerts)
+        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
@@ -77,7 +77,7 @@
         <dd>
             @Html.DisplayFor(model => model.LicenseNumber)
         </dd>
-        @if (Model.RequiredCerts != null)
+        @*@if (Model.RequiredCerts != null)
         {
             if (Model.RequiredCerts.Contains("1")) //if(title1) or all titles that require this cert
             {
@@ -142,7 +142,7 @@
                     @Html.DisplayFor(model => model.Cert3EndDate)
                 </dd>
             }//if statements for the rest of the certifications
-        }
+        }*@
     </dl>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />

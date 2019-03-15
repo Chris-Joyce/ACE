@@ -14,12 +14,28 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <input type="hidden" asp-for="Cert1EndDate" />
-            <input type="hidden" asp-for="Cert1StartDate" />
-            <input type="hidden" asp-for="Cert2EndDate" />
-            <input type="hidden" asp-for="Cert2StartDate" />
-            <input type="hidden" asp-for="Cert3EndDate" />
-            <input type="hidden" asp-for="Cert3StartDate" />
+            <input type="hidden" asp-for="DCFHippastartDate" />
+            <input type="hidden" asp-for="DCFHippaEndDate" />
+            <input type="hidden" asp-for="VehicleRegistrationStartDate" />
+            <input type="hidden" asp-for="VehicleRegistrationEndDate" />
+            <input type="hidden" asp-for="VehicleInsuranceCardStartDate" />
+            <input type="hidden" asp-for="VehicleInsuranceCardEndDate" />
+            <input type="hidden" asp-for="YearlyEvaluationStartDate" />
+            <input type="hidden" asp-for="YearlyEvaluationEndDate" />
+            <input type="hidden" asp-for="TargetCaseManagmentStartDate" />
+            <input type="hidden" asp-for="TargetCaseManagmentEndDate" />
+            <input type="hidden" asp-for="AffidavitOfGoodMoralCharacterStartDate" />
+            <input type="hidden" asp-for="AffidavitOfGoodMoralCharacterEndDate" />
+            <input type="hidden" asp-for="FDLEBGSStartDate" />
+            <input type="hidden" asp-for="FDLEBGSEndDate" />
+            <input type="hidden" asp-for="JSOLocalBGSStartDate" />
+            <input type="hidden" asp-for="JSOLocalBGSEndDate" />
+            @*<input type="hidden" asp-for="Cert1EndDate" />
+        <input type="hidden" asp-for="Cert1StartDate" />
+        <input type="hidden" asp-for="Cert2EndDate" />
+        <input type="hidden" asp-for="Cert2StartDate" />
+        <input type="hidden" asp-for="Cert3EndDate" />
+        <input type="hidden" asp-for="Cert3StartDate" />*@
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -31,57 +47,62 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RequiredCerts" class="control-label"></label>
-                <input asp-for="RequiredCerts" class="form-control" />
-                <span asp-validation-for="RequiredCerts" class="text-danger"></span>
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                <label class="contain">
-                    <label asp-for="Title1" class="control-label"></label>
-                    <input asp-for="Title1" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title2" class="control-label"></label>
-                    <input asp-for="Title2" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title3" class="control-label"></label>
-                    <input asp-for="Title3" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title4" class="control-label"></label>
-                    <input asp-for="Title4" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title5" class="control-label"></label>
-                    <input asp-for="Title5" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title6" class="control-label"></label>
-                    <input asp-for="Title6" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title7" class="control-label"></label>
-                    <input asp-for="Title7" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title8" class="control-label"></label>
-                    <input asp-for="Title8" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-                <label class="contain">
-                    <label asp-for="Title9" class="control-label"></label>
-                    <input asp-for="Title9" type="checkbox" />
-                    <span class="checkmark"></span>
-                </label>
-            </div>*@
+            <label asp-for="RequiredCerts" class="control-label"></label>
+            <input asp-for="RequiredCerts" class="form-control" />
+            <span asp-validation-for="RequiredCerts" class="text-danger"></span>
+        </div>*@
+            @*<div class="form-group">
+            <label class="contain">
+                <label asp-for="Title1" class="control-label"></label>
+                <input asp-for="Title1" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title2" class="control-label"></label>
+                <input asp-for="Title2" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title3" class="control-label"></label>
+                <input asp-for="Title3" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title4" class="control-label"></label>
+                <input asp-for="Title4" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title5" class="control-label"></label>
+                <input asp-for="Title5" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title6" class="control-label"></label>
+                <input asp-for="Title6" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title7" class="control-label"></label>
+                <input asp-for="Title7" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title8" class="control-label"></label>
+                <input asp-for="Title8" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">
+                <label asp-for="Title9" class="control-label"></label>
+                <input asp-for="Title9" type="checkbox" />
+                <span class="checkmark"></span>
+            </label>
+        </div>*@
             <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />

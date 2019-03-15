@@ -48,39 +48,6 @@
             <th>
                 Status
             </th>
-            @*<th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HireDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LicenseNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CertificationType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CertificationStartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CertificationEndDate)
-        </th>*@
             <th></th>
         </tr>
     </thead>
@@ -93,32 +60,32 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            @if (((item.Cert1EndDate - DateTime.Now).TotalDays <= 0 && item.RequiredCerts.Contains("1")) || ((item.Cert2EndDate - DateTime.Now).TotalDays <= 0 && item.RequiredCerts.Contains("2")) || ((item.Cert3EndDate - DateTime.Now).TotalDays <= 0 && item.RequiredCerts.Contains("3")))
+            @if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 0) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 0) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 0) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 0) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 0) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 0) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 0))
             {
                 <td bgcolor="#FF0000">
                     <font color="#FFFFFF"><strong>Expired</strong></font>
                 </td>
             }
-            else if (((item.Cert1EndDate - DateTime.Now).TotalDays <= 7 && item.RequiredCerts.Contains("1")) || ((item.Cert2EndDate - DateTime.Now).TotalDays <= 7 && item.RequiredCerts.Contains("2")) || ((item.Cert3EndDate - DateTime.Now).TotalDays <= 7 && item.RequiredCerts.Contains("3")))
+            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 7) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 7) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 7) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 7) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 7) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 7) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 7) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 7))
             {
             <td bgcolor="#FF6500">
                 <strong>Less than 7 days</strong>
             </td>
             }
-            else if (((item.Cert1EndDate - DateTime.Now).TotalDays <= 14 && item.RequiredCerts.Contains("1")) || ((item.Cert2EndDate - DateTime.Now).TotalDays <= 14 && item.RequiredCerts.Contains("2")) || ((item.Cert3EndDate - DateTime.Now).TotalDays <= 14 && item.RequiredCerts.Contains("3")))
+            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 14) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 14) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 14) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 14) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 14) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 14) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 14) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 14))
             {
             <td bgcolor="#FFC500">
                 <strong>Less than 14 days</strong>
             </td>
             }
 
-            else if (((item.Cert1EndDate - DateTime.Now).TotalDays <= 30 && item.RequiredCerts.Contains("1")) || ((item.Cert2EndDate - DateTime.Now).TotalDays <= 30 && item.RequiredCerts.Contains("2")) || ((item.Cert3EndDate - DateTime.Now).TotalDays <= 30 && item.RequiredCerts.Contains("3")))
+            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30))
             {
             <td bgcolor="#FFFF00">
                 <strong>Less than 30 days</strong>
             </td>
             }
-            else if (((item.Cert1EndDate - DateTime.Now).TotalDays > 30 && item.RequiredCerts.Contains("1")) || ((item.Cert2EndDate - DateTime.Now).TotalDays > 30 && item.RequiredCerts.Contains("2")) || ((item.Cert3EndDate - DateTime.Now).TotalDays > 30 && item.RequiredCerts.Contains("3")))
+            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays > 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays > 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 30))
             {
             <td bgcolor="#00FF00">
                 <strong>Good</strong>
@@ -128,39 +95,6 @@
             { 
                 <td></td>
             }
-            @*<td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfBirth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HireDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LicenseNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertificationType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertificationStartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertificationEndDate)
-        </td>*@
             <td>
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a>
                 @if (User.IsInRole("Admin") || User.IsInRole("Manager"))

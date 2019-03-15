@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeTrackingSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190309225112_Employee")]
+    [Migration("20190315160028_Employee")]
     partial class Employee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,25 +28,29 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<string>("Address");
 
-                    b.Property<DateTime>("Cert1EndDate");
+                    b.Property<DateTime>("AffidavitOfGoodMoralCharacterEndDate");
 
-                    b.Property<DateTime>("Cert1StartDate");
-
-                    b.Property<DateTime>("Cert2EndDate");
-
-                    b.Property<DateTime>("Cert2StartDate");
-
-                    b.Property<DateTime>("Cert3EndDate");
-
-                    b.Property<DateTime>("Cert3StartDate");
+                    b.Property<DateTime>("AffidavitOfGoodMoralCharacterStartDate");
 
                     b.Property<string>("City");
+
+                    b.Property<DateTime>("DCFHippaEndDate");
+
+                    b.Property<DateTime>("DCFHippastartDate");
 
                     b.Property<DateTime>("DateOfBirth");
 
                     b.Property<string>("Email");
 
+                    b.Property<DateTime>("FDLEBGSEndDate");
+
+                    b.Property<DateTime>("FDLEBGSStartDate");
+
                     b.Property<DateTime>("HireDate");
+
+                    b.Property<DateTime>("JSOLocalBGSEndDate");
+
+                    b.Property<DateTime>("JSOLocalBGSStartDate");
 
                     b.Property<int>("LicenseNumber");
 
@@ -54,9 +58,25 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<string>("Phone");
 
-                    b.Property<string>("RequiredCerts");
-
                     b.Property<string>("State");
+
+                    b.Property<DateTime>("TargetCaseManagmentEndDate");
+
+                    b.Property<DateTime>("TargetCaseManagmentStartDate");
+
+                    b.Property<string>("Title");
+
+                    b.Property<DateTime>("VehicleInsuranceCardEndDate");
+
+                    b.Property<DateTime>("VehicleInsuranceCardStartDate");
+
+                    b.Property<DateTime>("VehicleRegistrationEndDate");
+
+                    b.Property<DateTime>("VehicleRegistrationStartDate");
+
+                    b.Property<DateTime>("YearlyEvaluationEndDate");
+
+                    b.Property<DateTime>("YearlyEvaluationStartDate");
 
                     b.Property<int>("Zip");
 

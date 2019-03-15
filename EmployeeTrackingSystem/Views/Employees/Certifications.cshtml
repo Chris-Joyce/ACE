@@ -1,11 +1,11 @@
 ﻿@model EmployeeTrackingSystem.Models.Employee
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Certifications";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Edit Certifications</h2>
 
 <h4>@Html.DisplayFor(model => model.Name)</h4>
 <hr />
@@ -16,7 +16,7 @@
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="Name" />
             <input type="hidden" asp-for="Email" />
-            <input type="hidden" asp-for="RequiredCerts" />
+            <input type="hidden" asp-for="Title" />
             <input type="hidden" asp-for="Address" />
             <input type="hidden" asp-for="City" />
             <input type="hidden" asp-for="Zip" />
@@ -24,59 +24,147 @@
             <input type="hidden" asp-for="Phone" />
             <input type="hidden" asp-for="DateOfBirth" />
             <input type="hidden" asp-for="LicenseNumber" />
-            @if (Model.RequiredCerts != null)
+            <div class="form-group">
+                <label asp-for="DCFHippastartDate" class="control-label"></label>
+                <input asp-for="DCFHippastartDate" class="form-control" />
+                <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DCFHippaEndDate" class="control-label"></label>
+                <input asp-for="DCFHippaEndDate" class="form-control" />
+                <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="VehicleRegistrationStartDate" class="control-label"></label>
+                <input asp-for="VehicleRegistrationStartDate" class="form-control" />
+                <span asp-validation-for="VehicleRegistrationStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleRegistrationEndDate" class="control-label"></label>
+                <input asp-for="VehicleRegistrationEndDate" class="form-control" />
+                <span asp-validation-for="VehicleRegistrationEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="VehicleInsuranceCardStartDate" class="control-label"></label>
+                <input asp-for="VehicleInsuranceCardStartDate" class="form-control" />
+                <span asp-validation-for="VehicleInsuranceCardStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleInsuranceCardEndDate" class="control-label"></label>
+                <input asp-for="VehicleInsuranceCardEndDate" class="form-control" />
+                <span asp-validation-for="VehicleInsuranceCardEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="YearlyEvaluationStartDate" class="control-label"></label>
+                <input asp-for="YearlyEvaluationStartDate" class="form-control" />
+                <span asp-validation-for="YearlyEvaluationStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearlyEvaluationEndDate" class="control-label"></label>
+                <input asp-for="YearlyEvaluationEndDate" class="form-control" />
+                <span asp-validation-for="YearlyEvaluationEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="TargetCaseManagmentStartDate" class="control-label"></label>
+                <input asp-for="TargetCaseManagmentStartDate" class="form-control" />
+                <span asp-validation-for="TargetCaseManagmentStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TargetCaseManagmentEndDate" class="control-label"></label>
+                <input asp-for="TargetCaseManagmentEndDate" class="form-control" />
+                <span asp-validation-for="TargetCaseManagmentEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="AffidavitOfGoodMoralCharacterStartDate" class="control-label"></label>
+                <input asp-for="AffidavitOfGoodMoralCharacterStartDate" class="form-control" />
+                <span asp-validation-for="AffidavitOfGoodMoralCharacterStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AffidavitOfGoodMoralCharacterEndDate" class="control-label"></label>
+                <input asp-for="AffidavitOfGoodMoralCharacterEndDate" class="form-control" />
+                <span asp-validation-for="AffidavitOfGoodMoralCharacterEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="FDLEBGSStartDate" class="control-label"></label>
+                <input asp-for="FDLEBGSStartDate" class="form-control" />
+                <span asp-validation-for="FDLEBGSStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FDLEBGSEndDate" class="control-label"></label>
+                <input asp-for="FDLEBGSEndDate" class="form-control" />
+                <span asp-validation-for="FDLEBGSEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="JSOLocalBGSStartDate" class="control-label"></label>
+                <input asp-for="JSOLocalBGSStartDate" class="form-control" />
+                <span asp-validation-for="JSOLocalBGSStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JSOLocalBGSEndDate" class="control-label"></label>
+                <input asp-for="JSOLocalBGSEndDate" class="form-control" />
+                <span asp-validation-for="JSOLocalBGSEndDate" class="text-danger"></span>
+            </div>
+            <br />
+            @*@if (Model.RequiredCerts != null)
+        {
+            if (Model.RequiredCerts.Contains("1"))
             {
-                if (Model.RequiredCerts.Contains("1"))
-                {
-                    <div class="form-group">
-                        <h3><strong>Cert 1</strong></h3>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cert1StartDate" class="control-label"></label>
-                        <input asp-for="Cert1StartDate" class="form-control" />
-                        <span asp-validation-for="Cert1StartDate" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cert1EndDate" class="control-label"></label>
-                        <input asp-for="Cert1EndDate" class="form-control" />
-                        <span asp-validation-for="Cert1EndDate" class="text-danger"></span>
-                    </div>
-                }
-
-                if (Model.RequiredCerts.Contains("2"))
-                {
-                    <div class="form-group">
-                        <h3><strong>Cert 2</strong></h3>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cert2StartDate" class="control-label"></label>
-                        <input asp-for="Cert2StartDate" class="form-control" />
-                        <span asp-validation-for="Cert2StartDate" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cert2EndDate" class="control-label"></label>
-                        <input asp-for="Cert2EndDate" class="form-control" />
-                        <span asp-validation-for="Cert2EndDate" class="text-danger"></span>
-                    </div>
-                }
-
-                if (Model.RequiredCerts.Contains("3"))
-                {
-                    <div class="form-group">
-                        <h3><strong>Cert 3</strong></h3>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cert3StartDate" class="control-label"></label>
-                        <input asp-for="Cert3StartDate" class="form-control" />
-                        <span asp-validation-for="Cert3StartDate" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Cert3EndDate" class="control-label"></label>
-                        <input asp-for="Cert3EndDate" class="form-control" />
-                        <span asp-validation-for="Cert3EndDate" class="text-danger"></span>
-                    </div>
-                }
+                <div class="form-group">
+                    <h3><strong>Cert 1</strong></h3>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cert1StartDate" class="control-label"></label>
+                    <input asp-for="Cert1StartDate" class="form-control" />
+                    <span asp-validation-for="Cert1StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cert1EndDate" class="control-label"></label>
+                    <input asp-for="Cert1EndDate" class="form-control" />
+                    <span asp-validation-for="Cert1EndDate" class="text-danger"></span>
+                </div>
             }
+
+            if (Model.RequiredCerts.Contains("2"))
+            {
+                <div class="form-group">
+                    <h3><strong>Cert 2</strong></h3>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cert2StartDate" class="control-label"></label>
+                    <input asp-for="Cert2StartDate" class="form-control" />
+                    <span asp-validation-for="Cert2StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cert2EndDate" class="control-label"></label>
+                    <input asp-for="Cert2EndDate" class="form-control" />
+                    <span asp-validation-for="Cert2EndDate" class="text-danger"></span>
+                </div>
+            }
+
+            if (Model.RequiredCerts.Contains("3"))
+            {
+                <div class="form-group">
+                    <h3><strong>Cert 3</strong></h3>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cert3StartDate" class="control-label"></label>
+                    <input asp-for="Cert3StartDate" class="form-control" />
+                    <span asp-validation-for="Cert3StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cert3EndDate" class="control-label"></label>
+                    <input asp-for="Cert3EndDate" class="form-control" />
+                    <span asp-validation-for="Cert3EndDate" class="text-danger"></span>
+                </div>
+            }
+        }*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
