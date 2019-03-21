@@ -4,6 +4,18 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style>
+        .dl-horizontal dt {
+            width: 290px;
+            white-space: normal;
+            margin-bottom: 2px;
+        }
+        .dl-horizontal dd {
+            margin-left: 310px;
+        }
+    </style>
+</head>
 
 <h2>Details</h2>
 
@@ -23,12 +35,6 @@
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-        @*<dt>
-            @Html.DisplayNameFor(model => model.RequiredCerts)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.RequiredCerts)
-        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
@@ -77,72 +83,468 @@
         <dd>
             @Html.DisplayFor(model => model.LicenseNumber)
         </dd>
-        @*@if (Model.RequiredCerts != null)
+        <dt>
+            DCF Hippa
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DCFHippastartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DCFHippaEndDate)
+        </dd>
+        <dt>
+            Vehicle Registration
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleRegistrationStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleRegistrationEndDate)
+        </dd>
+        <dt>
+            Vehicle Insurance Card
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleInsuranceCardStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleInsuranceCardEndDate)
+        </dd>
+        <dt>
+            Yearly Evaluation
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.YearlyEvaluationStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.YearlyEvaluationEndDate)
+        </dd>
+        <dt>
+            Target Case Managment Certification
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetCaseManagmentStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetCaseManagmentEndDate)
+        </dd>
+        <dt>
+            Affidavit of Good Moral Character
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AffidavitOfGoodMoralCharacterStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AffidavitOfGoodMoralCharacterEndDate)
+        </dd>
+        <dt>
+            FDLE-BGS
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FDLEBGSStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FDLEBGSEndDate)
+        </dd>
+        <dt>
+            JSO Local BGS
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Start Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JSOLocalBGSStartDate)
+        </dd>
+        <dt>
+            End Date
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JSOLocalBGSEndDate)
+        </dd>
+        @if (Model.CBHT)
         {
-            if (Model.RequiredCerts.Contains("1")) //if(title1) or all titles that require this cert
-            {
-                <dt>
-                    Certification Type
-                </dt>
-                <dd>
-                    Cert 1
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cert1StartDate)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Cert1StartDate)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cert1EndDate)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Cert1EndDate)
-                </dd>
-            }
-            if (Model.RequiredCerts.Contains("2")) //if(title2) or all titles that require this cert
-            {
-                <dt>
-                    Certification Type
-                </dt>
-                <dd>
-                    Cert 2
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cert2StartDate)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Cert2StartDate)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cert2EndDate)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Cert2EndDate)
-                </dd>
-            }
-            if (Model.RequiredCerts.Contains("3")) //if(title3) or all titles that require this cert
-            {
-                <dt>
-                    Certification Type
-                </dt>
-                <dd>
-                    Cert 3
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cert3StartDate)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Cert3StartDate)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cert3EndDate)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Cert3EndDate)
-                </dd>
-            }//if statements for the rest of the certifications
-        }*@
+            <dt>
+                ANRP
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ANRPStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ANRPEndDate)
+            </dd>
+            <dt>
+                Clinical Competence
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClinicalCompetenceStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClinicalCompetenceEndDate)
+            </dd>
+            <dt>
+                Maintaining Client and Personal Safety
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClientPersonalSafetyStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClientPersonalSafetyEndDate)
+            </dd>
+            <dt>
+                Documentation and Patient Confidentiality
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PatientConfidentialityStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PatientConfidentialityEndDate)
+            </dd>
+            <dt>
+                Ethical and Professional Responsibilities
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EthicalProfessionalStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EthicalProfessionalEndDate)
+            </dd>
+            <dt>
+                Electives
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ElectivesStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ElectivesEndDate)
+            </dd>
+        }
+        @if (Model.APDSupportedLiving || Model.APDSupportedEmployement)
+        {
+            <dt>
+                Zero Tolerance
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ZeroToleranceStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ZeroToleranceEndDate)
+            </dd>
+            <dt>
+                Direct Care Core Competencies
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DCCCStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DCCCEndDate)
+            </dd>
+            <dt>
+                First Aid
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAidStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAidEndDate)
+            </dd>
+            <dt>
+                APD HIPAA
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.APDHIPAAStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.APDHIPAAEndDate)
+            </dd>
+            <dt>
+                CPR
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPRStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPREndDate)
+            </dd>
+            <dt>
+                HIV-AIDS/Bloodborne Pathogens
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HIVAIDSStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HIVAIDSEndDate)
+            </dd>
+        }
+        @if (Model.APDSupportedLiving)
+        {
+            <dt>
+                Social Security Work Incentives
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SocialSecurityStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SocialSecurityEndDate)
+            </dd>
+            <dt>
+                In-service Training
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.InServiceTrainingStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.InServiceTrainingEndDate)
+            </dd>
+        }
+        @if (Model.APDSupportedEmployement)
+        {
+            <dt>
+                In-service Training Related to Employment
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RelatedToEmploymentStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RelatedToEmploymentEndDate)
+            </dd>
+            <dt>
+                Medication Administration Training
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MedicationAdministrationStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MedicationAdministrationEndDate)
+            </dd>
+            <dt>
+                Reactive Strategies
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReactiveStrategiesStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReactiveStrategiesEndDate)
+            </dd>
+        }
     </dl>
 </div>
 <div>
