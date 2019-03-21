@@ -115,18 +115,130 @@ namespace EmployeeTrackingSystem.Models
         public DateTime JSOLocalBGSEndDate { get; set; }
 
 
-        ////cbht
-        //[DisplayName("Certification Start Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert9StartDate { get; set; }
-        //[DisplayName("Certification End Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert9EndDate { get; set; }
-        //[DisplayName("Certification Start Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert10StartDate { get; set; }
-        //[DisplayName("Certification End Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert10endDate { get; set; }
+        //cbht
+        [DisplayName("ANRP Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ANRPStartDate { get; set; }
+        [DisplayName("ANRP End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ANRPEndDate { get; set; }
+
+        [DisplayName("Clinical Competence Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ClinicalCompetenceStartDate { get; set; }
+        [DisplayName("Clinical Competence End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ClinicalCompetenceEndDate { get; set; }
+
+        [DisplayName("Maintaining Client and Personal Safety Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ClientPersonalSafetyStartDate { get; set; }
+        [DisplayName("Maintaining Client and Personal Safety End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ClientPersonalSafetyEndDate { get; set; }
+
+        [DisplayName("Documentation and Patient Confidentiality Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime PatientConfidentialityStartDate { get; set; }
+        [DisplayName("Documentation and Patient Confidentiality End Date")]
+        [DataType(DataType.Date)]
+        public DateTime PatientConfidentialityEndDate { get; set; }
+
+        [DisplayName("Ethical and Professional Responsibilities Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime EthicalProfessionalStartDate { get; set; }
+        [DisplayName("Ethical and Professional Responsibilities End Date")]
+        [DataType(DataType.Date)]
+        public DateTime EthicalProfessionalEndDate { get; set; }
+
+        [DisplayName("Electives Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ElectivesStartDate { get; set; }
+        [DisplayName("Electives End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ElectivesEndDate { get; set; }
+
+        //supported living & supported employment
+        //waiver providers
+
+        [DisplayName("Zero Tolerance Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ZeroToleranceStartDate { get; set; }
+        [DisplayName("Zero Tolerance End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ZeroToleranceEndDate { get; set; }
+
+        [DisplayName("Direct Care Core Competencies Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime DCCCStartDate { get; set; }
+        [DisplayName("Direct Care Core Competencies End Date")]
+        [DataType(DataType.Date)]
+        public DateTime DCCCEndDate { get; set; }
+
+        [DisplayName("First Aid Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime FirstAidStartDate { get; set; }
+        [DisplayName("First Aid End Date")]
+        [DataType(DataType.Date)]
+        public DateTime FirstAidEndDate { get; set; }
+
+        [DisplayName("APD HIPAA Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime APDHIPAAStartDate { get; set; }
+        [DisplayName("APD HIPAA End Date")]
+        [DataType(DataType.Date)]
+        public DateTime APDHIPAAEndDate { get; set; }
+
+        [DisplayName("CPR Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime CPRStartDate { get; set; }
+        [DisplayName("CPR End Date")]
+        [DataType(DataType.Date)]
+        public DateTime CPREndDate { get; set; }
+
+        [DisplayName("HIV-AIDS/Bloodborne Pathogens Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime HIVAIDSStartDate { get; set; }
+        [DisplayName("HIV-AIDS/Bloodborne Pathogens End Date")]
+        [DataType(DataType.Date)]
+        public DateTime HIVAIDSEndDate { get; set; }
+
+        //supported living only
+
+        [DisplayName("Social Security Work Incentives Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime SocialSecurityStartDate { get; set; }
+        [DisplayName("Social Security Work Incentives End Date")]
+        [DataType(DataType.Date)]
+        public DateTime SocialSecurityEndDate { get; set; }
+
+        [DisplayName("In-service Training Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime InServiceTrainingStartDate { get; set; }
+        [DisplayName("In-service Training End Date")]
+        [DataType(DataType.Date)]
+        public DateTime InServiceTrainingEndDate { get; set; }
+
+        //supported employment only
+        [DisplayName("In-service Training Related to Employment Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime RelatedToEmploymentStartDate { get; set; }
+        [DisplayName("In-service Training Related to Employment End Date")]
+        [DataType(DataType.Date)]
+        public DateTime RelatedToEmploymentEndDate { get; set; }
+
+        [DisplayName("Medication Administration Training Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime MedicationAdministrationStartDate { get; set; }
+        [DisplayName("Medication Administration Training End Date")]
+        [DataType(DataType.Date)]
+        public DateTime MedicationAdministrationEndDate { get; set; }
+
+        [DisplayName("Reactive Strategies Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ReactiveStrategiesStartDate { get; set; }
+        [DisplayName("Reactive Strategies End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ReactiveStrategiesEndDate { get; set; }
     }
 }

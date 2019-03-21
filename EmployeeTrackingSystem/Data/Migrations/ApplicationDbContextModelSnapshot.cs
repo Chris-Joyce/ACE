@@ -24,6 +24,14 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("ANRPEndDate");
+
+                    b.Property<DateTime>("ANRPStartDate");
+
+                    b.Property<DateTime>("APDHIPAAEndDate");
+
+                    b.Property<DateTime>("APDHIPAAStartDate");
+
                     b.Property<bool>("APDSupportedEmployement");
 
                     b.Property<bool>("APDSupportedLiving");
@@ -36,7 +44,23 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<bool>("CBHT");
 
+                    b.Property<DateTime>("CPREndDate");
+
+                    b.Property<DateTime>("CPRStartDate");
+
                     b.Property<string>("City");
+
+                    b.Property<DateTime>("ClientPersonalSafetyEndDate");
+
+                    b.Property<DateTime>("ClientPersonalSafetyStartDate");
+
+                    b.Property<DateTime>("ClinicalCompetenceEndDate");
+
+                    b.Property<DateTime>("ClinicalCompetenceStartDate");
+
+                    b.Property<DateTime>("DCCCEndDate");
+
+                    b.Property<DateTime>("DCCCStartDate");
 
                     b.Property<DateTime>("DCFHippaEndDate");
 
@@ -44,13 +68,33 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<DateTime>("DateOfBirth");
 
+                    b.Property<DateTime>("ElectivesEndDate");
+
+                    b.Property<DateTime>("ElectivesStartDate");
+
                     b.Property<string>("Email");
+
+                    b.Property<DateTime>("EthicalProfessionalEndDate");
+
+                    b.Property<DateTime>("EthicalProfessionalStartDate");
 
                     b.Property<DateTime>("FDLEBGSEndDate");
 
                     b.Property<DateTime>("FDLEBGSStartDate");
 
+                    b.Property<DateTime>("FirstAidEndDate");
+
+                    b.Property<DateTime>("FirstAidStartDate");
+
+                    b.Property<DateTime>("HIVAIDSEndDate");
+
+                    b.Property<DateTime>("HIVAIDSStartDate");
+
                     b.Property<DateTime>("HireDate");
+
+                    b.Property<DateTime>("InServiceTrainingEndDate");
+
+                    b.Property<DateTime>("InServiceTrainingStartDate");
 
                     b.Property<DateTime>("JSOLocalBGSEndDate");
 
@@ -58,9 +102,29 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<int>("LicenseNumber");
 
+                    b.Property<DateTime>("MedicationAdministrationEndDate");
+
+                    b.Property<DateTime>("MedicationAdministrationStartDate");
+
                     b.Property<string>("Name");
 
+                    b.Property<DateTime>("PatientConfidentialityEndDate");
+
+                    b.Property<DateTime>("PatientConfidentialityStartDate");
+
                     b.Property<string>("Phone");
+
+                    b.Property<DateTime>("ReactiveStrategiesEndDate");
+
+                    b.Property<DateTime>("ReactiveStrategiesStartDate");
+
+                    b.Property<DateTime>("RelatedToEmploymentEndDate");
+
+                    b.Property<DateTime>("RelatedToEmploymentStartDate");
+
+                    b.Property<DateTime>("SocialSecurityEndDate");
+
+                    b.Property<DateTime>("SocialSecurityStartDate");
 
                     b.Property<string>("State");
 
@@ -81,6 +145,10 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<DateTime>("YearlyEvaluationEndDate");
 
                     b.Property<DateTime>("YearlyEvaluationStartDate");
+
+                    b.Property<DateTime>("ZeroToleranceEndDate");
+
+                    b.Property<DateTime>("ZeroToleranceStartDate");
 
                     b.Property<int>("Zip");
 
