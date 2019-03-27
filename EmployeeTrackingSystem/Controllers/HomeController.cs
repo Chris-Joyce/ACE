@@ -61,6 +61,7 @@ namespace EmployeeTrackingSystem.Controllers
                 worksheet.Cells[1, 12].Value = "Certification Type";
                 worksheet.Cells[1, 13].Value = "Certification Start Date";
                 worksheet.Cells[1, 14].Value = "Certification End Date";
+                worksheet.Cells[1, 15].Value = "Hours";
 
                 int i = 0;
                 int row = 2;
