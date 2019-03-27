@@ -273,6 +273,21 @@
                     <input asp-for="InServiceTrainingEndDate" class="form-control" />
                     <span asp-validation-for="InServiceTrainingEndDate" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="InServiceTrainingHours" class="control-label"></label>
+                    <select asp-for="InServiceTrainingHours" class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <span asp-validation-for="InServiceTrainingHours" class="text-danger"></span>
+                </div>
                 <br />
                 <div class="form-group">
                     <label asp-for="RelatedToEmploymentStartDate" class="control-label"></label>
@@ -283,6 +298,21 @@
                     <label asp-for="RelatedToEmploymentEndDate" class="control-label"></label>
                     <input asp-for="RelatedToEmploymentEndDate" class="form-control" />
                     <span asp-validation-for="RelatedToEmploymentEndDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RelatedToEmploymentHours" class="control-label"></label>
+                    <select asp-for="RelatedToEmploymentHours" class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <span asp-validation-for="RelatedToEmploymentHours" class="text-danger"></span>
                 </div>
                 <br />
                 <div class="form-group">
@@ -397,6 +427,21 @@
                     <input asp-for="InServiceTrainingEndDate" class="form-control" />
                     <span asp-validation-for="InServiceTrainingEndDate" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="InServiceTrainingHours" class="control-label"></label>
+                    <select asp-for="InServiceTrainingHours" class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <span asp-validation-for="InServiceTrainingHours" class="text-danger"></span>
+                </div>
                 <br />
             }
             else if (Model.APDSupportedEmployement && !Model.APDSupportedLiving)//APDSupportedEmployement certs
@@ -476,6 +521,21 @@
                     <label asp-for="RelatedToEmploymentEndDate" class="control-label"></label>
                     <input asp-for="RelatedToEmploymentEndDate" class="form-control" />
                     <span asp-validation-for="RelatedToEmploymentEndDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RelatedToEmploymentHours" class="control-label"></label>
+                    <select asp-for="RelatedToEmploymentHours" class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <span asp-validation-for="RelatedToEmploymentHours" class="text-danger"></span>
                 </div>
                 <br />
                 <div class="form-group">

@@ -235,7 +235,7 @@ namespace EmployeeTrackingSystem.Controllers
                         worksheet.Cells[row, 13].Value = employeeList[i].SocialSecurityStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].SocialSecurityEndDate;
-                        worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
+                        worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";           
                         row++;
 
                         worksheet.Cells[row, 12].Value = "In-service Training";
@@ -243,6 +243,7 @@ namespace EmployeeTrackingSystem.Controllers
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].InServiceTrainingEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
+                        worksheet.Cells[row, 15].Value = employeeList[i].InServiceTrainingHours;
                         row++;
                     }
 
@@ -254,6 +255,7 @@ namespace EmployeeTrackingSystem.Controllers
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].RelatedToEmploymentEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
+                        worksheet.Cells[row, 15].Value = employeeList[i].RelatedToEmploymentHours;
                         row++;
 
                         worksheet.Cells[row, 12].Value = "Medication Administration";

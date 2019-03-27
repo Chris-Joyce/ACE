@@ -30,25 +30,7 @@ namespace EmployeeTrackingSystem.Models
         [DataType(DataType.Date)]
         public DateTime HireDate { get; set; }
         [DisplayName("License Number")]
-        public int LicenseNumber { get; set; }
-        //[DisplayName("Certification Start Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert1StartDate { get; set; }//rename all certs and titles
-        //[DisplayName("Certification End Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert1EndDate { get; set; }
-        //[DisplayName("Certification Start Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert2StartDate { get; set; }
-        //[DisplayName("Certification End Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert2EndDate { get; set; }
-        //[DisplayName("Certification Start Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert3StartDate { get; set; }
-        //[DisplayName("Certification End Date")]
-        //[DataType(DataType.Date)]
-        //public DateTime Cert3EndDate { get; set; }
+        public string LicenseNumber { get; set; }
 
         //check boxes
         public bool CBHT { get; set; }
@@ -218,6 +200,8 @@ namespace EmployeeTrackingSystem.Models
         [DisplayName("In-service Training End Date")]
         [DataType(DataType.Date)]
         public DateTime InServiceTrainingEndDate { get; set; }
+        [DisplayName("In-service Training Hours")]
+        public int InServiceTrainingHours { get; set; }
 
         //supported employment only
         [DisplayName("In-service Training Related to Employment Start Date")]
@@ -226,6 +210,8 @@ namespace EmployeeTrackingSystem.Models
         [DisplayName("In-service Training Related to Employment End Date")]
         [DataType(DataType.Date)]
         public DateTime RelatedToEmploymentEndDate { get; set; }
+        [DisplayName("In-service Training Related to Employment Hours")]
+        public int RelatedToEmploymentHours { get; set; }
 
         [DisplayName("Medication Administration Training Start Date")]
         [DataType(DataType.Date)]
