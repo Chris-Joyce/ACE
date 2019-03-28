@@ -27,6 +27,6 @@ namespace EmployeeTrackingSystem.Models
         public string Email { get; set; }
 
         public int LicenseNumber { get; set;}
-
+    }
        
 }
