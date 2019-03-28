@@ -18,12 +18,12 @@ namespace EmployeeTrackingSystem.Models
         public string Message { get; set; }
 
         public string Sent { get; set; }
-        [Key]
+       // [Key]
         public string Id { get; set; }
 
         public string Name { get; set; }
 
-        [EmailAddress]
+        //[EmailAddress]
         public string Email { get; set; }
 
         public int LicenseNumber { get; set;}
