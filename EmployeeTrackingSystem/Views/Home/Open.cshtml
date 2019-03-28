@@ -1,0 +1,55 @@
+@model EmployeeTrackingSystem.Models.Mail
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <style>
+
+        .dl-horizontal dt {
+            width: 290px;
+            white-space: normal;
+            margin-bottom: 2px;
+        }
+
+        .dl-horizontal dd {
+            margin-left: 310px;
+        }
+    </style>
+</head>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.From)@Html.Raw(":")
+            
+        </dt>
+        <dd>
+            admin@ace.com
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)@Html.Raw(":")
+
+            
+        </dt>
+        <dd>
+            30 day notification
+        </dd>
+        <dt>
+            <br>
+            @Html.DisplayNameFor(model => model.Message)@Html.Raw(":") 
+        </dt>
+        <dd>
+            <br>
+            Hello Eric Williams, we would like to inform you that your HIPPA certifications is now expired. Please renew as soon as possible. <br><br>
+
+            Robin Williams <br>
+            Agency For Community Empowerment
+        </dd>
+
+    </dl>
+</div>
