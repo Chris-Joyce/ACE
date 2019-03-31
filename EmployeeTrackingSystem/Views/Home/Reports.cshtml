@@ -5,16 +5,16 @@
 <table>
     <tr>
         <th><h2><img src="~/images/ACElogo.jpg" alt="ACE" height="40" />@ViewData["Title"]</h2></th>
-        <th><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></th>
+        @*<th><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></th>*@
     </tr>
-    <tr>
+    @*<tr>
         <th>
             <form class="example" action="action_page.php">
                 <input type="text" placeholder="search employee" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </th>
-    </tr>
+    </tr>*@
 </table>
 <br>
 <table id="MainHeader" style="width:100%">
@@ -46,9 +46,6 @@
         <th>@Html.DisplayNameFor(model => model.Email)</th>
         <th>@Html.DisplayNameFor(model => model.HireDate)</th>
         <th>@Html.DisplayNameFor(model => model.LicenseNumber)</th>
-        @*<th>Certification Type</th>
-        <th>Certification Start Date</th>
-        <th>Certification End Date</th>*@
     </tr>
     @foreach (var item in Model)
     {
@@ -57,11 +54,9 @@
             <td>@Html.DisplayFor(modelItem => item.Email)</td>
             <td>@Html.DisplayFor(modelItem => item.HireDate)</td>
             <td>@Html.DisplayFor(modelItem => item.LicenseNumber)</td>
-            @*<td>@Html.DisplayFor(modelItem => item.CertificationType)</td>
-            <td>@Html.DisplayFor(modelItem => item.CertificationStartDate)</td>
-            <td>@Html.DisplayFor(modelItem => item.CertificationEndDate)</td>*@
         </tr>
     }
 </table>
-</br></br>
+<br>
+<br>
 <a asp-action="Download" class="btn btn-primary">Download Report</a>
