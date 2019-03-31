@@ -36,6 +36,12 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Address)
         </dt>
         <dd>
@@ -487,6 +493,12 @@
             <dd>
                 @Html.DisplayFor(model => model.InServiceTrainingEndDate)
             </dd>
+            <dt>
+                Hours
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.InServiceTrainingHours)
+            </dd>
         }
         @if (Model.APDSupportedEmployement)
         {
@@ -507,6 +519,12 @@
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.RelatedToEmploymentEndDate)
+            </dd>
+            <dt>
+                Hours
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RelatedToEmploymentHours)
             </dd>
             <dt>
                 Medication Administration Training
@@ -543,6 +561,12 @@
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.ReactiveStrategiesEndDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Notes)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Notes)
             </dd>
         }
     </dl>

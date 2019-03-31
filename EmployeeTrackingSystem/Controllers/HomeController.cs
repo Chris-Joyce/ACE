@@ -305,6 +305,11 @@ namespace EmployeeTrackingSystem.Controllers
 
             return View();
         }
+        
+         public IActionResult Open()
+        {
+            return View();
+        }
 
         //[HttpPost]
         //public ActionResult Email(EmployeeTrackingSystem.Models.EmailModel model)

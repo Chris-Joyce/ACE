@@ -110,6 +110,8 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("Notes");
+
                     b.Property<DateTime>("PatientConfidentialityEndDate");
 
                     b.Property<DateTime>("PatientConfidentialityStartDate");

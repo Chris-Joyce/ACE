@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeTrackingSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190321033517_Employee")]
+    [Migration("20190331193016_Employee")]
     partial class Employee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,19 +96,23 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
                     b.Property<DateTime>("InServiceTrainingEndDate");
 
+                    b.Property<int>("InServiceTrainingHours");
+
                     b.Property<DateTime>("InServiceTrainingStartDate");
 
                     b.Property<DateTime>("JSOLocalBGSEndDate");
 
                     b.Property<DateTime>("JSOLocalBGSStartDate");
 
-                    b.Property<int>("LicenseNumber");
+                    b.Property<string>("LicenseNumber");
 
                     b.Property<DateTime>("MedicationAdministrationEndDate");
 
                     b.Property<DateTime>("MedicationAdministrationStartDate");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("Notes");
 
                     b.Property<DateTime>("PatientConfidentialityEndDate");
 
@@ -121,6 +125,8 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<DateTime>("ReactiveStrategiesStartDate");
 
                     b.Property<DateTime>("RelatedToEmploymentEndDate");
+
+                    b.Property<int>("RelatedToEmploymentHours");
 
                     b.Property<DateTime>("RelatedToEmploymentStartDate");
 

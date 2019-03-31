@@ -226,5 +226,7 @@ namespace EmployeeTrackingSystem.Models
         [DisplayName("Reactive Strategies End Date")]
         [DataType(DataType.Date)]
         public DateTime ReactiveStrategiesEndDate { get; set; }
+
+        public string Notes { get; set; }
     }
 }

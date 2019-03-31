@@ -1,6 +1,7 @@
-﻿@model EmployeeTrackingSystem.Models.EmailModel
+@model EmployeeTrackingSystem.Models.EmailModel
 @{
-    ViewBag.Title = "Email";
+    ViewData["Title"] = "Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <table>
@@ -8,56 +9,62 @@
         <th><h2><img src="~/images/ACElogo.jpg" alt="ACE" height="40" />@ViewData["Title"]</h2></th>
     </tr>
 </table>
-@using (Html.BeginForm("Send", "Email", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Send an Email</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
 
-    if (ViewBag.Success != null && (bool)ViewBag.Success)
-    {
-        <h2 class="text-danger">Email sent.</h2>
-    }
-    else if (ViewBag.Success != null && !(bool)ViewBag.Success)
-    {
-        <h2 class="text-danger">retry sending email</h2>
-    }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>Email Status</th>
+            <th></th>
+        </tr>
+    </thead>
 
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.From, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.From, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.To, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.To, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-primary" value="Send" />
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Sent, new { @class = "col-md-2 control-label" })
-        <textarea id="viewEmails" readonly rows="10" cols="40" float="left"></textarea>
-    </div>
-
-
-}
+    <tbody>
+        <tr>
+            <td>
+                Brenda Car
+            </td>
+            <td>bcar@ace.com</td>
+            <td> expiration notification sent</td>
+            <td> @Html.ActionLink("View", "Open")</td>
+        </tr>
+        <tr>
+            <td>
+                Eric Williams
+            </td>
+            <td>ewilliams@ace.com</td>
+            <td> expiration notification sent</td>
+            <td> @Html.ActionLink("View", "Open")</td>
+        </tr>
+        <tr>
+            <td>
+                Sherma Katz
+            </td>
+            <td>skatz@ace.com</td>
+            <td>7 day notification sent</td>
+            <td>  @Html.ActionLink("View", "Open")</td>
+        </tr>
+        <tr>
+            <td>
+                Donna Johnson
+            </td>
+            <td>djohnson@ace.com</td>
+            <td>14 day notification sent</td>
+            <td>  @Html.ActionLink("View", "Open")</td>
+        </tr>
+        <tr>
+            <td>
+                Jeremy Smith
+            </td>
+            <td>jsmith@ace.com</td>
+            <td>30 day notification sent</td>
+            <td>  @Html.ActionLink("View", "Open")</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
