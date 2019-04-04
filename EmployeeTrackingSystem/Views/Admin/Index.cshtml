@@ -16,39 +16,55 @@
             <th>
                 Role
             </th>
-            @*<th>
+            <th>
                 Change Role
-            </th>*@
+            </th>
+            <th>
+                Lock/Unlock
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var user in Model)
         {
-            <tr>
-                <th>
-                    @Html.DisplayFor(model => user.Email)
-                </th>
-                @if (await UserManager.IsInRoleAsync(user, "Admin"))
-                {
-                    <th>Admin</th>
-                }
-                else if (await UserManager.IsInRoleAsync(user, "Manager"))
-                {
-                    <th>Manager</th>
-                }
-                else if (await UserManager.IsInRoleAsync(user, "User"))
-                {
-                    <th>User</th>
-                }
-                @*<td>
-                    <form asp-action="ChangeRole">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Update Role</button>
-                            <a asp-action="ChangeRole" asp-route-id="@user.Id">Edit</a>
-                        </div>
-                    </form>
-                </td>*@
-            </tr>
+            if (UserManager.GetUserId(User) != user.Id)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => user.Email)
+                    </td>
+                    @if (await UserManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        <td>Admin</td>
+                    }
+                    else if (await UserManager.IsInRoleAsync(user, "Manager"))
+                    {
+                        <td>Manager</td>
+                    }
+                    else if (await UserManager.IsInRoleAsync(user, "User"))
+                    {
+                        <td>User</td>
+                    }
+                    <td>
+                        <a asp-action="MakeUser" asp-route-id="@user.Id">User</a> @Html.Raw("|")
+                        <a asp-action="MakeManager" asp-route-id="@user.Id">Manager</a> @Html.Raw("|")
+                        <a asp-action="MakeAdmin" asp-route-id="@user.Id">Admin</a>
+                    </td>
+                    @if (await UserManager.IsLockedOutAsync(user))
+                    {
+                        <td>
+                            <a asp-action="Lock" asp-route-id="@user.Id">Unlock</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a asp-action="Lock" asp-route-id="@user.Id">Lock</a>
+                        </td>
+                    }
+                </tr>
+
+            }
         }
     </tbody>
 </table>

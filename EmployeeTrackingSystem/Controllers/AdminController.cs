@@ -26,9 +26,11 @@ namespace EmployeeTrackingSystem.Controllers
             ViewData["Message"] = "Admin";
             return View(_application.Users.ToList());
         }
-       
-        public async Task<IActionResult> ChangeRole(IdentityUser user)
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> MakeUser(string id)
         {
+            var user = await _application.Users.FindAsync(id);
             if (await _userManager.IsInRoleAsync(user, "Admin"))
             {
                 await _userManager.RemoveFromRoleAsync(user, "Admin");
@@ -40,6 +42,62 @@ namespace EmployeeTrackingSystem.Controllers
             else if (await _userManager.IsInRoleAsync(user, "User"))
             {
                 await _userManager.RemoveFromRoleAsync(user, "User");
+            }
+            await _userManager.AddToRoleAsync(user, "User");
+            return LocalRedirect("/Admin");
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> MakeManager(string id)
+        {
+            var user = await _application.Users.FindAsync(id);
+            if (await _userManager.IsInRoleAsync(user, "Admin"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "Admin");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "Manager"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "Manager");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "User"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "User");
+            }
+            await _userManager.AddToRoleAsync(user, "Manager");
+            return LocalRedirect("/Admin");
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> MakeAdmin(string id)
+        {
+            var user = await _application.Users.FindAsync(id);
+            if (await _userManager.IsInRoleAsync(user, "Admin"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "Admin");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "Manager"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "Manager");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "User"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "User");
+            }
+            await _userManager.AddToRoleAsync(user, "Admin");
+            return LocalRedirect("/Admin");
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Lock(string id)
+        {
+            var user = await _application.Users.FindAsync(id);
+            if(await _userManager.IsLockedOutAsync(user) == true)
+            {
+                await _userManager.SetLockoutEndDateAsync(user, DateTime.Today);
+            }
+            else
+            {
+                await _userManager.SetLockoutEndDateAsync(user, DateTime.Now.AddYears(100));
             }
             return LocalRedirect("/Admin");
         }
