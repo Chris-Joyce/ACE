@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -48,14 +48,14 @@ namespace EmployeeTrackingSystem.Controllers
                 int totalRows = employeeList.Count();
 
                 worksheet.Cells[1, 1].Value = "Full Name";
-                worksheet.Cells[1, 2].Value = "Email";
-                worksheet.Cells[1, 3].Value = "Title";
-                worksheet.Cells[1, 4].Value = "Address";
-                worksheet.Cells[1, 5].Value = "City";
-                worksheet.Cells[1, 6].Value = "State";
-                worksheet.Cells[1, 7].Value = "Zip";
-                worksheet.Cells[1, 8].Value = "Phone";
-                worksheet.Cells[1, 9].Value = "Date Of Birth";
+                worksheet.Cells[1, 2].Value = "Address";
+                worksheet.Cells[1, 3].Value = "City";
+                worksheet.Cells[1, 4].Value = "State";
+                worksheet.Cells[1, 5].Value = "Zip";
+                worksheet.Cells[1, 6].Value = "Phone";
+                worksheet.Cells[1, 7].Value = "Email";
+                worksheet.Cells[1, 8].Value = "Date Of Birth";
+                worksheet.Cells[1, 9].Value = "Title";
                 worksheet.Cells[1, 10].Value = "Hire Date";
                 worksheet.Cells[1, 11].Value = "License Number";
                 worksheet.Cells[1, 12].Value = "Certification Type";
@@ -68,16 +68,15 @@ namespace EmployeeTrackingSystem.Controllers
                 for (int r = 2; r <= totalRows + 1; r++)
                 {
                     worksheet.Cells[row, 1].Value = employeeList[i].Name;
-                    worksheet.Cells[row, 2].Value = employeeList[i].Email;
-                    worksheet.Cells[row, 3].Value = employeeList[i].Title;
-                    //employees titles and shift all collumns up by one
-                    worksheet.Cells[row, 4].Value = employeeList[i].Address;
-                    worksheet.Cells[row, 5].Value = employeeList[i].City;
-                    worksheet.Cells[row, 6].Value = employeeList[i].State;
-                    worksheet.Cells[row, 7].Value = employeeList[i].Zip;
-                    worksheet.Cells[row, 8].Value = employeeList[i].Phone;
-                    worksheet.Cells[row, 9].Value = employeeList[i].DateOfBirth;
-                    worksheet.Cells[row, 9].Style.Numberformat.Format = "mm/dd/yyyy";
+                    worksheet.Cells[row, 2].Value = employeeList[i].Address;
+                    worksheet.Cells[row, 3].Value = employeeList[i].City;
+                    worksheet.Cells[row, 4].Value = employeeList[i].State;
+                    worksheet.Cells[row, 5].Value = employeeList[i].Zip;
+                    worksheet.Cells[row, 6].Value = employeeList[i].Phone;
+                    worksheet.Cells[row, 7].Value = employeeList[i].Email;
+                    worksheet.Cells[row, 8].Value = employeeList[i].DateOfBirth;
+                    worksheet.Cells[row, 8].Style.Numberformat.Format = "mm/dd/yyyy";
+                    worksheet.Cells[row, 9].Value = employeeList[i].Title;
                     worksheet.Cells[row, 10].Value = employeeList[i].HireDate;
                     worksheet.Cells[row, 10].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 11].Value = employeeList[i].LicenseNumber;
@@ -88,49 +87,49 @@ namespace EmployeeTrackingSystem.Controllers
                     worksheet.Cells[row, 14].Value = employeeList[i].DCFHippaEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "Vehicle Registration";
                     worksheet.Cells[row, 13].Value = employeeList[i].VehicleRegistrationStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].VehicleRegistrationEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "Vehicle Insurance";
                     worksheet.Cells[row, 13].Value = employeeList[i].VehicleInsuranceCardStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].VehicleInsuranceCardEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "Yearly Evaluation";
                     worksheet.Cells[row, 13].Value = employeeList[i].YearlyEvaluationStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].YearlyEvaluationEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "TargetCaseManagment";
                     worksheet.Cells[row, 13].Value = employeeList[i].TargetCaseManagmentStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].TargetCaseManagmentEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "Affidavit Of Good Moral Character";
                     worksheet.Cells[row, 13].Value = employeeList[i].AffidavitOfGoodMoralCharacterStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].AffidavitOfGoodMoralCharacterEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "FDLE-BGS";
                     worksheet.Cells[row, 13].Value = employeeList[i].FDLEBGSStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].FDLEBGSEndDate;
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
-
+                    worksheet.Cells[row, 1].Value = employeeList[i].Name;
                     worksheet.Cells[row, 12].Value = "JSO Local BGS";
                     worksheet.Cells[row, 13].Value = employeeList[i].JSOLocalBGSStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
@@ -140,41 +139,42 @@ namespace EmployeeTrackingSystem.Controllers
 
                     if (employeeList[i].CBHT)
                     {
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "ANRP";
                         worksheet.Cells[row, 13].Value = employeeList[i].ANRPStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].ANRPEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Clinical Competence";
                         worksheet.Cells[row, 13].Value = employeeList[i].ClinicalCompetenceStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].ClinicalCompetenceEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Maintaining Client and Personal Safety";
                         worksheet.Cells[row, 13].Value = employeeList[i].ClientPersonalSafetyStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].ClientPersonalSafetyEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Documentation and Patient Confidentiality";
                         worksheet.Cells[row, 13].Value = employeeList[i].PatientConfidentialityStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].PatientConfidentialityEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Ethical and Professional Responsibilities";
                         worksheet.Cells[row, 13].Value = employeeList[i].EthicalProfessionalStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].EthicalProfessionalEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Electives";
                         worksheet.Cells[row, 13].Value = employeeList[i].ElectivesStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
@@ -186,41 +186,42 @@ namespace EmployeeTrackingSystem.Controllers
                     if (employeeList[i].APDSupportedLiving || employeeList[i].APDSupportedEmployement)
                     {
                         //both
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Zero Tolerance";
                         worksheet.Cells[row, 13].Value = employeeList[i].ZeroToleranceStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].ZeroToleranceEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Direct Care Core Competencies";
                         worksheet.Cells[row, 13].Value = employeeList[i].DCCCStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].DCCCEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "First Aid";
                         worksheet.Cells[row, 13].Value = employeeList[i].FirstAidStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].FirstAidEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "APD HIPAA";
                         worksheet.Cells[row, 13].Value = employeeList[i].APDHIPAAStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].APDHIPAAEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "CPR";
                         worksheet.Cells[row, 13].Value = employeeList[i].CPRStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].CPREndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "HIV-AIDS/Bloodborne Pathogens";
                         worksheet.Cells[row, 13].Value = employeeList[i].HIVAIDSStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
@@ -232,13 +233,14 @@ namespace EmployeeTrackingSystem.Controllers
                     if (employeeList[i].APDSupportedLiving)
                     {
                         //living only
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Social Security Work Incentives";
                         worksheet.Cells[row, 13].Value = employeeList[i].SocialSecurityStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].SocialSecurityEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";           
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "In-service Training";
                         worksheet.Cells[row, 13].Value = employeeList[i].InServiceTrainingStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
@@ -251,6 +253,7 @@ namespace EmployeeTrackingSystem.Controllers
                     if (employeeList[i].APDSupportedEmployement)
                     {
                         //employment only
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "In-service Training Related to Employment";
                         worksheet.Cells[row, 13].Value = employeeList[i].RelatedToEmploymentStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
@@ -258,14 +261,14 @@ namespace EmployeeTrackingSystem.Controllers
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 15].Value = employeeList[i].RelatedToEmploymentHours;
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Medication Administration";
                         worksheet.Cells[row, 13].Value = employeeList[i].MedicationAdministrationStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                         worksheet.Cells[row, 14].Value = employeeList[i].MedicationAdministrationEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
-
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Reactive Strategies";
                         worksheet.Cells[row, 13].Value = employeeList[i].ReactiveStrategiesStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
