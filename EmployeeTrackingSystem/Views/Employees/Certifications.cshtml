@@ -1,4 +1,4 @@
-﻿@model EmployeeTrackingSystem.Models.Employee
+@model EmployeeTrackingSystem.Models.Employee
 
 @{
     ViewData["Title"] = "Edit Certifications";
@@ -29,89 +29,93 @@
             <input type="hidden" asp-for="APDSupportedLiving" />
             <input type="hidden" asp-for="APDSupportedEmployement" />
             <h3>General Certifications</h3>
-            <div class="form-group">
-                <label asp-for="DCFHippastartDate" class="control-label"></label>
+            <h4>DCF Hippa</h4>
+            <div class="col-lg-6">
+                <label>Start Date</label>
+            </div>
+            <div class="col-md-6">
+                <label>End Date</label>
+            </div>
+            <div class="col-lg-6">
                 <input asp-for="DCFHippastartDate" class="form-control" />
                 <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DCFHippaEndDate" class="control-label"></label>
+            <div class="col-md-6">
                 <input asp-for="DCFHippaEndDate" class="form-control" />
                 <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
             </div>
-            <br />
-            <div class="form-group">
-                <label asp-for="VehicleRegistrationStartDate" class="control-label"></label>
+            <br /><br />
+            <h4>Vehicle Registration</h4>
+            <div class="col-lg-6">
                 <input asp-for="VehicleRegistrationStartDate" class="form-control" />
                 <span asp-validation-for="VehicleRegistrationStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="VehicleRegistrationEndDate" class="control-label"></label>
+            <div class="col-md-6">
                 <input asp-for="VehicleRegistrationEndDate" class="form-control" />
                 <span asp-validation-for="VehicleRegistrationEndDate" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
+            <div class="col-lg-6">
                 <label asp-for="VehicleInsuranceCardStartDate" class="control-label"></label>
                 <input asp-for="VehicleInsuranceCardStartDate" class="form-control" />
                 <span asp-validation-for="VehicleInsuranceCardStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="VehicleInsuranceCardEndDate" class="control-label"></label>
                 <input asp-for="VehicleInsuranceCardEndDate" class="form-control" />
                 <span asp-validation-for="VehicleInsuranceCardEndDate" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
+            <div class="col-lg-6">
                 <label asp-for="YearlyEvaluationStartDate" class="control-label"></label>
                 <input asp-for="YearlyEvaluationStartDate" class="form-control" />
                 <span asp-validation-for="YearlyEvaluationStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="YearlyEvaluationEndDate" class="control-label"></label>
                 <input asp-for="YearlyEvaluationEndDate" class="form-control" />
                 <span asp-validation-for="YearlyEvaluationEndDate" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
+            <div class="col-lg-6">
                 <label asp-for="TargetCaseManagmentStartDate" class="control-label"></label>
                 <input asp-for="TargetCaseManagmentStartDate" class="form-control" />
                 <span asp-validation-for="TargetCaseManagmentStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="TargetCaseManagmentEndDate" class="control-label"></label>
                 <input asp-for="TargetCaseManagmentEndDate" class="form-control" />
                 <span asp-validation-for="TargetCaseManagmentEndDate" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
+            <div class="col-lg-6">
                 <label asp-for="AffidavitOfGoodMoralCharacterStartDate" class="control-label"></label>
                 <input asp-for="AffidavitOfGoodMoralCharacterStartDate" class="form-control" />
                 <span asp-validation-for="AffidavitOfGoodMoralCharacterStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="AffidavitOfGoodMoralCharacterEndDate" class="control-label"></label>
                 <input asp-for="AffidavitOfGoodMoralCharacterEndDate" class="form-control" />
                 <span asp-validation-for="AffidavitOfGoodMoralCharacterEndDate" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
+            <div class="col-lg-6">
                 <label asp-for="FDLEBGSStartDate" class="control-label"></label>
                 <input asp-for="FDLEBGSStartDate" class="form-control" />
                 <span asp-validation-for="FDLEBGSStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="FDLEBGSEndDate" class="control-label"></label>
                 <input asp-for="FDLEBGSEndDate" class="form-control" />
                 <span asp-validation-for="FDLEBGSEndDate" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
+            <div class="col-lg-6">
                 <label asp-for="JSOLocalBGSStartDate" class="control-label"></label>
                 <input asp-for="JSOLocalBGSStartDate" class="form-control" />
                 <span asp-validation-for="JSOLocalBGSStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="JSOLocalBGSEndDate" class="control-label"></label>
                 <input asp-for="JSOLocalBGSEndDate" class="form-control" />
                 <span asp-validation-for="JSOLocalBGSEndDate" class="text-danger"></span>
@@ -186,7 +190,6 @@
                 </div>
                 <br />
             }
-
             @if (Model.APDSupportedLiving && Model.APDSupportedEmployement)//both apd certs
             {
                 <h3>APD Supported Living & Supported Employment</h3>
