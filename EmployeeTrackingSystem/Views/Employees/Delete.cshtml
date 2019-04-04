@@ -23,24 +23,13 @@
 <div>
     <h4>@Html.DisplayFor(model => model.Name)</h4>
     <hr />
+    <h3>Demographics</h3>
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Address)
@@ -73,6 +62,18 @@
             @Html.DisplayFor(model => model.Phone)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </dt>
         <dd>
@@ -90,6 +91,7 @@
         <dd>
             @Html.DisplayFor(model => model.LicenseNumber)
         </dd>
+        <h3>General Certifications</h3>
         <dt>
             DCF Hippa
         </dt>
@@ -236,6 +238,7 @@
         </dd>
         @if (Model.CBHT)
         {
+            <h3>CBHT</h3>
             <dt>
                 ANRP
             </dt>
@@ -345,8 +348,9 @@
                 @Html.DisplayFor(model => model.ElectivesEndDate)
             </dd>
         }
-        @if (Model.APDSupportedLiving || Model.APDSupportedEmployement)
+        @if (Model.APDSupportedLiving && Model.APDSupportedEmployement)
         {
+            <h3>APD Supported Living & Supported Employment</h3>
             <dt>
                 Zero Tolerance
             </dt>
@@ -455,9 +459,6 @@
             <dd>
                 @Html.DisplayFor(model => model.HIVAIDSEndDate)
             </dd>
-        }
-        @if (Model.APDSupportedLiving)
-        {
             <dt>
                 Social Security Work Incentives
             </dt>
@@ -500,9 +501,6 @@
             <dd>
                 @Html.DisplayFor(model => model.InServiceTrainingHours)
             </dd>
-        }
-        @if (Model.APDSupportedEmployement)
-        {
             <dt>
                 In-service Training Related to Employment
             </dt>
@@ -570,6 +568,341 @@
                 @Html.DisplayFor(model => model.Notes)
             </dd>
         }
+        else if (Model.APDSupportedLiving)
+        {
+            <h3>APD Supported Living</h3>
+            <dt>
+                Zero Tolerance
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ZeroToleranceStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ZeroToleranceEndDate)
+            </dd>
+            <dt>
+                Direct Care Core Competencies
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DCCCStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DCCCEndDate)
+            </dd>
+            <dt>
+                First Aid
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAidStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAidEndDate)
+            </dd>
+            <dt>
+                APD HIPAA
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.APDHIPAAStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.APDHIPAAEndDate)
+            </dd>
+            <dt>
+                CPR
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPRStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPREndDate)
+            </dd>
+            <dt>
+                HIV-AIDS/Bloodborne Pathogens
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HIVAIDSStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HIVAIDSEndDate)
+            </dd>
+            <dt>
+                Social Security Work Incentives
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SocialSecurityStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SocialSecurityEndDate)
+            </dd>
+            <dt>
+                In-service Training
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.InServiceTrainingStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.InServiceTrainingEndDate)
+            </dd>
+            <dt>
+                Hours
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.InServiceTrainingHours)
+            </dd>
+        }
+        else if (Model.APDSupportedEmployement)
+        {
+            <h3>APD Supported Employment</h3>
+            <dt>
+                Zero Tolerance
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ZeroToleranceStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ZeroToleranceEndDate)
+            </dd>
+            <dt>
+                Direct Care Core Competencies
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DCCCStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DCCCEndDate)
+            </dd>
+            <dt>
+                First Aid
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAidStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAidEndDate)
+            </dd>
+            <dt>
+                APD HIPAA
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.APDHIPAAStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.APDHIPAAEndDate)
+            </dd>
+            <dt>
+                CPR
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPRStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CPREndDate)
+            </dd>
+            <dt>
+                HIV-AIDS/Bloodborne Pathogens
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HIVAIDSStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.HIVAIDSEndDate)
+            </dd>
+            <dd>
+
+            </dd>
+            <dt>
+                In-service Training Related to Employment
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RelatedToEmploymentStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RelatedToEmploymentEndDate)
+            </dd>
+            <dt>
+                Hours
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RelatedToEmploymentHours)
+            </dd>
+            <dt>
+                Medication Administration Training
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MedicationAdministrationStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MedicationAdministrationEndDate)
+            </dd>
+            <dt>
+                Reactive Strategies
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReactiveStrategiesStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReactiveStrategiesEndDate)
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
     </dl>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />

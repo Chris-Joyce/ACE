@@ -8,26 +8,52 @@
 <head>
     <style>
         /* basic positioning */
-        .legend { list-style: none; }
-        .legend li { float: left; margin-right: 10px; }
-        .legend span { border: 1px solid #ccc; float: left; width: 16px; height: 16px; margin: 2px; }
-        /* your colors */
-        .legend .good { background-color: #00FF00; }
-        .legend .lessthan30 { background-color: #FFFF00; }
-        .legend .lessthan14 { background-color: #FFC500; }
-        .legend .lessthan7 { background-color: #FF6500; }
-        .legend .expired { background-color: #FF0000; }
+        .legend {
+            list-style: none;
+        }
+
+            .legend li {
+                float: left;
+                margin-right: 10px;
+            }
+
+            .legend span {
+                border: 1px solid #ccc;
+                float: left;
+                width: 16px;
+                height: 16px;
+                margin: 2px;
+            }
+            /* your colors */
+            .legend .good {
+                background-color: #00FF00;
+            }
+
+            .legend .lessthan30 {
+                background-color: #FFFF00;
+            }
+
+            .legend .lessthan14 {
+                background-color: #FFC500;
+            }
+
+            .legend .lessthan7 {
+                background-color: #FF6500;
+            }
+
+            .legend .expired {
+                background-color: #FF0000;
+            }
     </style>
 </head>
-     
+
 <h2><img src="~/images/ACElogo.jpg" alt="ACE" height="40" />@ViewData["Title"]</h2>
-     @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
-     {
-        <p>
-            <a asp-action="Create" class="btn btn-primary">Create New</a>
-        </p>
-     }
-     
+@if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+}
 <ul class="legend">
     <li><span class="good"></span> Good</li>
     <li><span class="lessthan30"></span> Less than 30 days</li>
@@ -35,7 +61,6 @@
     <li><span class="lessthan7"></span> Less than 7 days</li>
     <li><span class="expired"></span> Expired</li>
 </ul>
-
 <table class="table">
     <thead>
         <tr>
@@ -52,60 +77,61 @@
         </tr>
     </thead>
     <tbody>
-   @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            @if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 0) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 0) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 0) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 0) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 0) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 0) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 0) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 0) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 0) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 0) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 0)))  || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 0) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 0) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 0) || ((item.CPREndDate - DateTime.Now).TotalDays <= 0) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 0))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 0) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 0))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 0) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 0) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 0))))
-            {
-                <td bgcolor="#FF0000">
-                    <font color="#FFFFFF"><strong>Expired</strong></font>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
-            }
-            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 7) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 7) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 7) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 7) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 7) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 7) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 7) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 7) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 7) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 7) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 7) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 7))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 7) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 7) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 7) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 7) || ((item.CPREndDate - DateTime.Now).TotalDays <= 7) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 7))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 7) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 7))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 7) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 7) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 7))))
-            {
-            <td bgcolor="#FF6500">
-                <strong>Less than 7 days</strong>
-            </td>
-            }
-            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 14) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 14) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 14) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 14) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 14) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 14) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 14) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 14) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 14) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 14) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 14) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 14))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 14) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 14) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 14) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 14) || ((item.CPREndDate - DateTime.Now).TotalDays <= 14) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 14))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 14) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 14))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 14) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 14) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 14))))
-            {
-            <td bgcolor="#FFC500">
-                <strong>Less than 14 days</strong>
-            </td>
-            }
-
-            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 30))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 30) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 30) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30) || ((item.CPREndDate - DateTime.Now).TotalDays <= 30) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30))))
-            {
-            <td bgcolor="#FFFF00">
-                <strong>Less than 30 days</strong>
-            </td>
-            }
-            else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays > 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays > 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 30) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays > 30) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays > 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays > 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays > 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays > 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays > 30))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays > 30) || ((item.DCCCEndDate - DateTime.Now).TotalDays > 30) || ((item.FirstAidEndDate - DateTime.Now).TotalDays > 30) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays > 30) || ((item.CPREndDate - DateTime.Now).TotalDays > 30) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays > 30))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays > 30) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays > 30))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays > 30) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays > 30) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays > 30))))
-            {
-            <td bgcolor="#00FF00">
-                <strong>Good</strong>
-            </td>
-            }
-            else
-            { 
-                <td></td>
-            }
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                @if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 0) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 0) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 0) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 0) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 0) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 0) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 0) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 0) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 0) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 0) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 0))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 0) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 0) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 0) || ((item.CPREndDate - DateTime.Now).TotalDays <= 0) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 0))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 0) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 0))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 0) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 0) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 0))))
                 {
-                    @Html.Raw("|")
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> @Html.Raw("|")
-                    <a asp-action="Certifications" asp-route-id="@item.Id">Certifications</a> @Html.Raw("|")
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <td bgcolor="#FF0000">
+                        <font color="#FFFFFF"><strong>Expired</strong></font>
+                    </td>
                 }
-            </td>
-        </tr>
-}
+                else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 7) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 7) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 7) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 7) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 7) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 7) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 7) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 7) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 7) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 7) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 7) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 7))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 7) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 7) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 7) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 7) || ((item.CPREndDate - DateTime.Now).TotalDays <= 7) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 7))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 7) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 7))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 7) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 7) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 7))))
+                {
+                    <td bgcolor="#FF6500">
+                        <strong>Less than 7 days</strong>
+                    </td>
+                }
+                else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 14) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 14) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 14) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 14) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 14) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 14) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 14) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 14) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 14) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 14) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 14) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 14))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 14) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 14) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 14) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 14) || ((item.CPREndDate - DateTime.Now).TotalDays <= 14) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 14))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 14) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 14))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 14) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 14) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 14))))
+                {
+                    <td bgcolor="#FFC500">
+                        <strong>Less than 14 days</strong>
+                    </td>
+                }
+
+                else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 30))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 30) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 30) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30) || ((item.CPREndDate - DateTime.Now).TotalDays <= 30) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30))))
+                {
+                    <td bgcolor="#FFFF00">
+                        <strong>Less than 30 days</strong>
+                    </td>
+                }
+                else if (((item.DCFHippaEndDate - DateTime.Now).TotalDays > 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays > 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 30) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays > 30) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays > 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays > 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays > 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays > 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays > 30))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays > 30) || ((item.DCCCEndDate - DateTime.Now).TotalDays > 30) || ((item.FirstAidEndDate - DateTime.Now).TotalDays > 30) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays > 30) || ((item.CPREndDate - DateTime.Now).TotalDays > 30) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays > 30))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays > 30) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays > 30))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays > 30) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays > 30) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays > 30))))
+                {
+                    <td bgcolor="#00FF00">
+                        <strong>Good</strong>
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+                    {
+                        @Html.Raw("|")
+                        <a asp-action="Edit" asp-route-id="@item.Id">Demographics</a> @Html.Raw("|")
+                        <a asp-action="Certifications" asp-route-id="@item.Id">Certifications</a> @Html.Raw("|")
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

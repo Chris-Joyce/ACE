@@ -28,6 +28,7 @@
             <input type="hidden" asp-for="CBHT" />
             <input type="hidden" asp-for="APDSupportedLiving" />
             <input type="hidden" asp-for="APDSupportedEmployement" />
+            <h3>General Certifications</h3>
             <div class="form-group">
                 <label asp-for="DCFHippastartDate" class="control-label"></label>
                 <input asp-for="DCFHippastartDate" class="form-control" />
@@ -118,6 +119,7 @@
             <br />
             @if (Model.CBHT)
             {
+                <h3>CBHT</h3>
                 <div class="form-group">
                     <label asp-for="ANRPStartDate" class="control-label"></label>
                     <input asp-for="ANRPStartDate" class="form-control" />
@@ -187,6 +189,7 @@
 
             @if (Model.APDSupportedLiving && Model.APDSupportedEmployement)//both apd certs
             {
+                <h3>APD Supported Living & Supported Employment</h3>
                 //waiver providers
                 <div class="form-group">
                     <label asp-for="ZeroToleranceStartDate" class="control-label"></label>
@@ -341,6 +344,7 @@
             }
             else if (Model.APDSupportedLiving && !Model.APDSupportedEmployement)//APDSupportedLiving certs
             {
+                <h3>APD Supported Living</h3>
                 //waiver providers
                 <div class="form-group">
                     <label asp-for="ZeroToleranceStartDate" class="control-label"></label>
@@ -447,6 +451,7 @@
             }
             else if (Model.APDSupportedEmployement && !Model.APDSupportedLiving)//APDSupportedEmployement certs
             {
+                <h3>APD Supported Employment</h3>
                 //waiver providers
                 <div class="form-group">
                     <label asp-for="ZeroToleranceStartDate" class="control-label"></label>
@@ -573,7 +578,7 @@
         </form>
     </div>
 </div>
-
 <div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit Demographics</a> @Html.Raw("|")
     <a asp-action="Index">Back to List</a>
 </div>
