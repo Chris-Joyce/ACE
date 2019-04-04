@@ -90,7 +90,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FF6500">
-                                <strong>Less than 7 days</strong>
+                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -100,7 +100,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FFC500">
-                                <strong>Less than 14 days</strong>
+                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -110,7 +110,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FFFF00">
-                                <strong>Less than 30 days</strong>
+                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -120,7 +120,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#00FF00">
-                                <strong>Good</strong>
+                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
