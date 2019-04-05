@@ -306,7 +306,7 @@ namespace EmployeeTrackingSystem.Controllers
         {
             ViewData["Message"] = "The Email page";
 
-            return View();
+            return View(await _context.Employee.ToListAsync());
         }
         
          public IActionResult Open()
