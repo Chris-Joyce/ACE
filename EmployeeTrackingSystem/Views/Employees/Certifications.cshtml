@@ -71,16 +71,13 @@
             <input type="hidden" asp-for="APDSupportedLiving" />
             <input type="hidden" asp-for="APDSupportedEmployement" />
             <h3>General Certifications</h3>
-            <div class="col-lg-6">
-                <h4>DCF Hippa</h4>
-            </div>
-            <div class="col-md-6">
-               @if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0)
+            <div class="col-lg-12">
+                @if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0)
                 {
                     <table class="table">
                         <tr>
                             <td bgcolor="#FF0000">
-                                <font color="#FFFFFF"><strong>Expired</strong></font>
+                                <font color="#FFFFFF"><strong>DCF Hippa Expired</strong></font>
                             </td>
                         </tr>
                     </table>
@@ -90,7 +87,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FF6500">
-                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -100,7 +97,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FFC500">
-                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -110,7 +107,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FFFF00">
-                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -120,7 +117,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#00FF00">
-                                <strong>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -141,7 +138,58 @@
                 <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>Vehicle Registration</h4>
+            <div class="col-lg-12">
+                @if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>Vehicle Registration Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>Vehicle Registration Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>Vehicle Registration Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>Vehicle Registration Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>Vehicle Registration Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
@@ -157,7 +205,58 @@
                 <span asp-validation-for="VehicleRegistrationEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>Vehicle Insurance Card</h4>
+            <div class="col-lg-12">
+                @if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>Vehicle Insurance Card Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>Vehicle Insurance Card Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>Vehicle Insurance Card Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>Vehicle Insurance Card Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>Vehicle Insurance Card Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
@@ -173,7 +272,58 @@
                 <span asp-validation-for="VehicleInsuranceCardEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>Yearly Evaluation</h4>
+            <div class="col-lg-12">
+                @if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>Yearly Evaluation Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>Yearly Evaluation Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>Yearly Evaluation Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>Yearly Evaluation Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>Yearly Evaluation Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
@@ -189,7 +339,58 @@
                 <span asp-validation-for="YearlyEvaluationEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>Target Case Managment Certification</h4>
+            <div class="col-lg-12">
+                @if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>Target Case Managment Certification Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>Target Case Managment Certification Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>Target Case Managment Certification Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>Target Case Managment Certification Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>Target Case Managment Certification Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
@@ -205,7 +406,58 @@
                 <span asp-validation-for="TargetCaseManagmentEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>Affidavit of Good Moral Character</h4>
+            <div class="col-lg-12">
+                @if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>Affidavit of Good Moral Character Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>Affidavit of Good Moral Character Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>Affidavit of Good Moral Character Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>Affidavit of Good Moral Character Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>Affidavit of Good Moral Character Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
@@ -221,7 +473,58 @@
                 <span asp-validation-for="AffidavitOfGoodMoralCharacterEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>FDLE-BGS</h4>
+            <div class="col-lg-12">
+                @if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>FDLE-BGS Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>FDLE-BGS Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>FDLE-BGS Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>FDLE-BGS Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>FDLE-BGS Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
@@ -237,7 +540,58 @@
                 <span asp-validation-for="FDLEBGSEndDate" class="text-danger"></span>
                 <br />
             </div>
-            <h4>JSO Local BGS</h4>
+            <div class="col-lg-12">
+                @if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 0)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF0000">
+                                <font color="#FFFFFF"><strong>JSO Local BGS Expired</strong></font>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 7)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FF6500">
+                                <strong>JSO Local BGS Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 14)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFC500">
+                                <strong>JSO Local BGS Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <strong>JSO Local BGS Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 30)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <strong>JSO Local BGS Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
             <div class="col-lg-6">
                 <label>Start Date</label>
             </div>
