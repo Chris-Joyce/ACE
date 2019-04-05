@@ -70,8 +70,13 @@
             <input type="hidden" asp-for="CBHT" />
             <input type="hidden" asp-for="APDSupportedLiving" />
             <input type="hidden" asp-for="APDSupportedEmployement" />
+            @*<div class="input-group">
+                <input type="text" class="form-control" placeholder="Start" disabled />
+                <span class="input-group-addon">-</span>
+                <input type="text" class="form-control" placeholder="End" disabled />
+            </div>*@
             <h3>General Certifications</h3>
-            <div class="col-md-12">
+            <div class="col-lg-12">
                 @if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0)
                 {
                     <table class="table">
@@ -123,21 +128,29 @@
                     </table>
                 }
             </div>
-            <div class="col-lg-6">
-                <label>Start Date</label>
-            </div>
-            <div class="col-lg-6">
-                <label>End Date</label>
-            </div>
-            <div class="col-lg-6">
+            <div class="input-group">
                 <input asp-for="DCFHippastartDate" class="form-control" />
                 <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
-            </div>
-            <div class="col-lg-6">
+                <span class="input-group-addon">-</span>
                 <input asp-for="DCFHippaEndDate" class="form-control" />
                 <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
-                <br />
-            </div>
+            </div><br />
+            @*<div class="input-group">
+            <input asp-for="DCFHippastartDate" class="form-control" />
+            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+            <span class="input-group-addon">-</span>
+            <input asp-for="DCFHippaEndDate" class="form-control" />
+            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+        </div><br />*@
+            @*<div class="col-lg-6">
+            <input asp-for="DCFHippastartDate" class="form-control" />
+            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+        </div>
+        <div class="col-lg-6">
+            <input asp-for="DCFHippaEndDate" class="form-control" />
+            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+            <br />
+        </div>*@
             <div class="col-lg-12">
                 @if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0)
                 {
