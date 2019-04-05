@@ -302,7 +302,7 @@ namespace EmployeeTrackingSystem.Controllers
         }
 
         [Authorize(Roles = "Admin, Manager")]
-        public IActionResult Email()
+        public async Task<IActionResult> Email()
         {
             ViewData["Message"] = "The Email page";
 
