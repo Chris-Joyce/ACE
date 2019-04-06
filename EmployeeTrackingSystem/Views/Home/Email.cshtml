@@ -28,7 +28,7 @@
     </thead>
     <tbody>
    @foreach (var item in Model) {
-       if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30) || (item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 30))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 30) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 30) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30) || ((item.CPREndDate - DateTime.Now).TotalDays <= 30) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30))))
+       if (((item.DCFHippaEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30) || ((item.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30) || ((item.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30) || ((item.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30) || ((item.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30) || ((item.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30) || (item.CBHT && (((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 30))) || ((item.APDSupportedLiving || item.APDSupportedEmployement) && (((item.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30) || ((item.DCCCEndDate - DateTime.Now).TotalDays <= 30) || ((item.FirstAidEndDate - DateTime.Now).TotalDays <= 30) || ((item.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30) || ((item.CPREndDate - DateTime.Now).TotalDays <= 30) || ((item.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedLiving && (((item.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30) || ((item.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30))) || (item.APDSupportedEmployement && (((item.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30) || ((item.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30) || ((item.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30))))
        {
         <tr>
             <td>
@@ -86,7 +86,7 @@
                     <font><strong>Expired</strong></font>
                 </td>
             }
-            else if ((item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 0) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 0) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 0) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 0))))
+            else if ((item.CBHT && (((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 0) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 0) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 0) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 0) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 0))))
             {
                 <td>
                     <font><strong>Expired</strong></font>
@@ -160,7 +160,7 @@
                     <font><strong>Less than 7 days</strong></font>
                 </td>
             }
-            else if ((item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 7) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 7) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 7) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 7))))
+            else if ((item.CBHT && (((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 7) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 7) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 7) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 7) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 7))))
             {
                 <td>
                     <font><strong>Less than 7 days</strong></font>
@@ -234,7 +234,7 @@
                     <font><strong>Less than 14 days</strong></font>
                 </td>
             }
-            else if ((item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 14) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 14) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 14) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 14))))
+            else if ((item.CBHT && (((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 14) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 14) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 14) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 14) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 14))))
             {
                 <td>
                     <font><strong>Less than 14 days</strong></font>
@@ -308,7 +308,7 @@
                     <font><strong>Less than 30 days</strong></font>
                 </td>
             }
-            else if ((item.CBHT && (((item.ANRPEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 30))))
+            else if ((item.CBHT && (((item.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((item.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((item.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((item.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((item.ElectivesEndDate - DateTime.Now).TotalDays <= 30))))
             {
                 <td>
                     <font><strong>Less than 30 days</strong></font>
