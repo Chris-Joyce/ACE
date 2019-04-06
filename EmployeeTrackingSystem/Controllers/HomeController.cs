@@ -327,11 +327,11 @@ namespace EmployeeTrackingSystem.Controllers
         }
 
         [Authorize(Roles = "Admin, Manager")]
-        public IActionResult Email()
+        public async Task<IActionResult> Email()
         {
             ViewData["Message"] = "The Email page";
 
-            return View();
+            return View(await _context.Employee.ToListAsync());
         }
         
          public IActionResult Open()
@@ -339,31 +339,7 @@ namespace EmployeeTrackingSystem.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Email(EmployeeTrackingSystem.Models.EmailModel model)
-        //{
-        //    MailMessage message = new MailMessage("huntsville37@gmail.com", model.To);
-        //    message.Subject = model.Subject;
-        //    message.Body = model.Body;
-        //    message.IsBodyHtml = false;
-
-        //    SmtpClient smtp = new SmtpClient();
-        //    smtp.Host = "smtp.gmail.com";
-        //    //smtp.Host = "smtp.yahoo.com";
-        //    //smtp.Host = "smtp.outlook.com";
-        //    smtp.Port = 587;
-        //    smtp.EnableSsl = true;
-
-
-
-        //    smtp.UseDefaultCredentials = true;
-        //    smtp.Credentials = new System.Net.NetworkCredential("huntsville37@gmail.com", "password");
-        //    smtp.Send(message);
-        //    ViewBag.Message = "message sent";
-        //    return View();
-
-        //}
-
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
