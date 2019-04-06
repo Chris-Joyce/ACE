@@ -161,7 +161,7 @@
                     </tr>
                 </table>
             }
-            else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays > 30)
+            else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays > 60)
             {
                 <table class="table">
                     <tr>
@@ -224,7 +224,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -308,7 +318,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -375,7 +395,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -442,7 +472,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -509,7 +549,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -576,7 +626,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -643,7 +703,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
@@ -710,7 +780,17 @@
                         </tr>
                     </table>
                 }
-                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 30)
+                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 60)
+                {
+                    <table class="table">
+                        <tr>
+                            <td bgcolor="#d7ff6d">
+                                <strong>Vehicle Registration Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days</strong>
+                            </td>
+                        </tr>
+                    </table>
+                }
+                else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 60)
                 {
                     <table class="table">
                         <tr>
