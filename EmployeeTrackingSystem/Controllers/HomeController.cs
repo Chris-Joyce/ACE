@@ -137,15 +137,33 @@ namespace EmployeeTrackingSystem.Controllers
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
 
-                    if (employeeList[i].CBHT)
+                    if (employeeList[i].ARNP)
                     {
                         worksheet.Cells[row, 1].Value = employeeList[i].Name;
-                        worksheet.Cells[row, 12].Value = "ANRP";
-                        worksheet.Cells[row, 13].Value = employeeList[i].ANRPStartDate;
+                        worksheet.Cells[row, 12].Value = "DEA";
+                        worksheet.Cells[row, 13].Value = employeeList[i].DEAStartDate;
                         worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
-                        worksheet.Cells[row, 14].Value = employeeList[i].ANRPEndDate;
+                        worksheet.Cells[row, 14].Value = employeeList[i].DEAEndDate;
                         worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                         row++;
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
+                        worksheet.Cells[row, 12].Value = "ARNP Licence";
+                        worksheet.Cells[row, 13].Value = employeeList[i].ARNPLicenceStartDate;
+                        worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
+                        worksheet.Cells[row, 14].Value = employeeList[i].ARNPLicenceEndDate;
+                        worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
+                        row++;
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
+                        worksheet.Cells[row, 12].Value = "Insurance";
+                        worksheet.Cells[row, 13].Value = employeeList[i].InsuranceStartDate;
+                        worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
+                        worksheet.Cells[row, 14].Value = employeeList[i].InsuranceEndDate;
+                        worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
+                        row++;  
+                    }
+
+                    if (employeeList[i].CBHT)
+                    {
                         worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Clinical Competence";
                         worksheet.Cells[row, 13].Value = employeeList[i].ClinicalCompetenceStartDate;
@@ -186,6 +204,13 @@ namespace EmployeeTrackingSystem.Controllers
                     if (employeeList[i].APDSupportedLiving || employeeList[i].APDSupportedEmployement)
                     {
                         //both
+                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
+                        worksheet.Cells[row, 12].Value = "Social Security Work Incentives";
+                        worksheet.Cells[row, 13].Value = employeeList[i].SSWIStartDate;
+                        worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
+                        worksheet.Cells[row, 14].Value = employeeList[i].SSWIEndDate;
+                        worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
+                        row++;
                         worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Zero Tolerance";
                         worksheet.Cells[row, 13].Value = employeeList[i].ZeroToleranceStartDate;

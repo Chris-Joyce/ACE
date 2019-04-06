@@ -38,6 +38,7 @@ namespace EmployeeTrackingSystem.Models
         public bool APDSupportedLiving { get; set; }
         [DisplayName("APD Supported Employement")]
         public bool APDSupportedEmployement { get; set; }
+        public bool ARNP { get; set; }
 
         //All Employees have these
         [DisplayName("DCF Hippa Start Date")]
@@ -96,15 +97,29 @@ namespace EmployeeTrackingSystem.Models
         [DataType(DataType.Date)]
         public DateTime JSOLocalBGSEndDate { get; set; }
 
+        //arnp
+        [DisplayName("DEA Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime DEAStartDate { get; set; }
+        [DisplayName("DEA End Date")]
+        [DataType(DataType.Date)]
+        public DateTime DEAEndDate { get; set; }
+
+        [DisplayName("Licence Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime ARNPLicenceStartDate { get; set; }
+        [DisplayName("Licence End Date")]
+        [DataType(DataType.Date)]
+        public DateTime ARNPLicenceEndDate { get; set; }
+
+        [DisplayName("Insurance Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime InsuranceStartDate { get; set; }
+        [DisplayName("Insurance End Date")]
+        [DataType(DataType.Date)]
+        public DateTime InsuranceEndDate { get; set; }
 
         //cbht
-        [DisplayName("ANRP Start Date")]
-        [DataType(DataType.Date)]
-        public DateTime ANRPStartDate { get; set; }
-        [DisplayName("ANRP End Date")]
-        [DataType(DataType.Date)]
-        public DateTime ANRPEndDate { get; set; }
-
         [DisplayName("Clinical Competence Start Date")]
         [DataType(DataType.Date)]
         public DateTime ClinicalCompetenceStartDate { get; set; }
@@ -184,6 +199,13 @@ namespace EmployeeTrackingSystem.Models
         [DisplayName("HIV-AIDS/Bloodborne Pathogens End Date")]
         [DataType(DataType.Date)]
         public DateTime HIVAIDSEndDate { get; set; }
+
+        [DisplayName("Social Security Work Incentives Start Date")]
+        [DataType(DataType.Date)]
+        public DateTime SSWIStartDate { get; set; }
+        [DisplayName("Social Security Work Incentives End Date")]
+        [DataType(DataType.Date)]
+        public DateTime SSWIEndDate { get; set; }
 
         //supported living only
 

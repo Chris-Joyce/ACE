@@ -100,8 +100,6 @@
             <input type="hidden" asp-for="FDLEBGSEndDate" />
             <input type="hidden" asp-for="JSOLocalBGSStartDate" />
             <input type="hidden" asp-for="JSOLocalBGSEndDate" />
-            <input type="hidden" asp-for="ANRPStartDate" />
-            <input type="hidden" asp-for="ANRPEndDate" />
             <input type="hidden" asp-for="ClinicalCompetenceStartDate" />
             <input type="hidden" asp-for="ClinicalCompetenceEndDate" />
             <input type="hidden" asp-for="ClientPersonalSafetyStartDate" />
@@ -136,6 +134,14 @@
             <input type="hidden" asp-for="MedicationAdministrationEndDate" />
             <input type="hidden" asp-for="ReactiveStrategiesStartDate" />
             <input type="hidden" asp-for="ReactiveStrategiesEndDate" />
+            <input type="hidden" asp-for="DEAStartDate" />
+            <input type="hidden" asp-for="DEAEndDate" />
+            <input type="hidden" asp-for="ARNPLicenceStartDate" />
+            <input type="hidden" asp-for="ARNPLicenceEndDate" />
+            <input type="hidden" asp-for="InsuranceStartDate" />
+            <input type="hidden" asp-for="InsuranceEndDate" />
+            <input type="hidden" asp-for="SSWIStartDate" />
+            <input type="hidden" asp-for="SSWIEndDate" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -223,7 +229,7 @@
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-             <div class="form-group">
+            <div class="form-group">
                 <label asp-for="DateOfBirth" class="control-label"></label>
                 <input asp-for="DateOfBirth" class="form-control" />
                 <span asp-validation-for="DateOfBirth" class="text-danger"></span>
@@ -244,6 +250,11 @@
                 <span asp-validation-for="LicenseNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label class="contain">
+                    <label asp-for="ARNP" class="control-label"></label>
+                    <input asp-for="ARNP" type="checkbox" />
+                    <span class="checkmark"></span>
+                </label>
                 <label class="contain">
                     <label asp-for="CBHT" class="control-label"></label>
                     <input asp-for="CBHT" type="checkbox" />

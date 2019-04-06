@@ -67,22 +67,129 @@
             <input type="hidden" asp-for="DateOfBirth" />
             <input type="hidden" asp-for="HireDate" />
             <input type="hidden" asp-for="LicenseNumber" />
+            <input type="hidden" asp-for="ARNP" />
             <input type="hidden" asp-for="CBHT" />
             <input type="hidden" asp-for="APDSupportedLiving" />
             <input type="hidden" asp-for="APDSupportedEmployement" />
             @*<div class="input-group">
-                <input type="text" class="form-control" placeholder="Start" disabled />
-                <span class="input-group-addon">-</span>
-                <input type="text" class="form-control" placeholder="End" disabled />
-            </div>*@
+            <input type="text" class="form-control" placeholder="Start" disabled />
+            <span class="input-group-addon">-</span>
+            <input type="text" class="form-control" placeholder="End" disabled />
+        </div>*@
             <h3>General Certifications</h3>
+            @*<div class="col-lg-6">
+            @if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <table class="table col-xs-12">
+                    <tr>
+                        <td bgcolor="#FF0000">
+                            <font color="#FFFFFF"><strong>DCF Hippa Expired</strong></font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-group">
+                            <input asp-for="DCFHippastartDate" class="form-control" />
+                            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+                            <span class="input-group-addon">-</span>
+                            <input asp-for="DCFHippaEndDate" class="form-control" />
+                            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+
+                        </td>
+                    </tr>
+                </table>
+            }
+            else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <table class="table">
+                    <tr>
+                        <td bgcolor="#FF6500">
+                            <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-group">
+
+                            <input asp-for="DCFHippastartDate" class="form-control" />
+                            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+                            <span class="input-group-addon">-</span>
+                            <input asp-for="DCFHippaEndDate" class="form-control" />
+                            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+
+                        </td>
+                    </tr>
+                </table>
+            }
+            else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <table class="table">
+                    <tr>
+                        <td bgcolor="#FFC500">
+                            <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-group">
+
+                            <input asp-for="DCFHippastartDate" class="form-control" />
+                            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+                            <span class="input-group-addon">-</span>
+                            <input asp-for="DCFHippaEndDate" class="form-control" />
+                            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+
+                        </td>
+                    </tr>
+                </table>
+            }
+            else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <table class="table">
+                    <tr>
+                        <td bgcolor="#FFFF00">
+                            <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-group">
+
+                            <input asp-for="DCFHippastartDate" class="form-control" />
+                            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+                            <span class="input-group-addon">-</span>
+                            <input asp-for="DCFHippaEndDate" class="form-control" />
+                            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+
+                        </td>
+                    </tr>
+                </table>
+            }
+            else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays > 30)
+            {
+                <table class="table">
+                    <tr>
+                        <td bgcolor="#00FF00">
+                            <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-group">
+
+                            <input asp-for="DCFHippastartDate" class="form-control" />
+                            <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
+                            <span class="input-group-addon">-</span>
+                            <input asp-for="DCFHippaEndDate" class="form-control" />
+                            <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
+
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>*@
             <div class="col-lg-12">
                 @if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0)
                 {
                     <table class="table">
                         <tr>
                             <td bgcolor="#FF0000">
-                                <font color="#FFFFFF"><strong>DCF Hippa Expired</strong></font>
+                                <font color="#FFFFFF"><strong>Vehicle Registration Expired</strong></font>
                             </td>
                         </tr>
                     </table>
@@ -92,7 +199,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FF6500">
-                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>Vehicle Registration Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -102,7 +209,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FFC500">
-                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>Vehicle Registration Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -112,7 +219,7 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#FFFF00">
-                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>Vehicle Registration Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
@@ -122,19 +229,28 @@
                     <table class="table">
                         <tr>
                             <td bgcolor="#00FF00">
-                                <strong>DCF Hippa Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
+                                <strong>Vehicle Registration Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days</strong>
                             </td>
                         </tr>
                     </table>
                 }
             </div>
-            <div class="input-group">
+            <div class="col-lg-6">
+                <label>Start Date</label>
+            </div>
+            <div class="col-lg-6">
+                <label>End Date</label>
+            </div>
+            <div class="col-lg-6">
                 <input asp-for="DCFHippastartDate" class="form-control" />
                 <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
-                <span class="input-group-addon">-</span>
+            </div>
+            <div class="col-lg-6">
                 <input asp-for="DCFHippaEndDate" class="form-control" />
                 <span asp-validation-for="DCFHippaEndDate" class="text-danger"></span>
-            </div><br />
+                <br />
+            </div>
+
             @*<div class="input-group">
             <input asp-for="DCFHippastartDate" class="form-control" />
             <span asp-validation-for="DCFHippastartDate" class="text-danger"></span>
@@ -620,20 +736,46 @@
                 <span asp-validation-for="JSOLocalBGSEndDate" class="text-danger"></span>
                 <br />
             </div>
+            @if (Model.ARNP)
+            {
+                <h3>ARNP</h3>
+                <div class="form-group">
+                    <label asp-for="DEAStartDate" class="control-label"></label>
+                    <input asp-for="DEAStartDate" class="form-control" />
+                    <span asp-validation-for="DEAStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DEAEndDate" class="control-label"></label>
+                    <input asp-for="DEAEndDate" class="form-control" />
+                    <span asp-validation-for="DEAEndDate" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="ARNPLicenceStartDate" class="control-label"></label>
+                    <input asp-for="ARNPLicenceStartDate" class="form-control" />
+                    <span asp-validation-for="ARNPLicenceStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ARNPLicenceEndDate" class="control-label"></label>
+                    <input asp-for="ARNPLicenceEndDate" class="form-control" />
+                    <span asp-validation-for="ARNPLicenceEndDate" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="InsuranceStartDate" class="control-label"></label>
+                    <input asp-for="InsuranceStartDate" class="form-control" />
+                    <span asp-validation-for="InsuranceStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="InsuranceEndDate" class="control-label"></label>
+                    <input asp-for="InsuranceEndDate" class="form-control" />
+                    <span asp-validation-for="InsuranceEndDate" class="text-danger"></span>
+                </div>
+                <br />
+            }
             @if (Model.CBHT)
             {
                 <h3>CBHT</h3>
-                <div class="form-group">
-                    <label asp-for="ANRPStartDate" class="control-label"></label>
-                    <input asp-for="ANRPStartDate" class="form-control" />
-                    <span asp-validation-for="ANRPStartDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ANRPEndDate" class="control-label"></label>
-                    <input asp-for="ANRPEndDate" class="form-control" />
-                    <span asp-validation-for="ANRPEndDate" class="text-danger"></span>
-                </div>
-                <br />
                 <div class="form-group">
                     <label asp-for="ClinicalCompetenceStartDate" class="control-label"></label>
                     <input asp-for="ClinicalCompetenceStartDate" class="form-control" />
@@ -693,6 +835,17 @@
             {
                 <h3>APD Supported Living & Supported Employment</h3>
                 //waiver providers
+                <div class="form-group">
+                    <label asp-for="SSWIStartDate" class="control-label"></label>
+                    <input asp-for="SSWIStartDate" class="form-control" />
+                    <span asp-validation-for="SSWIStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SSWIEndDate" class="control-label"></label>
+                    <input asp-for="SSWIEndDate" class="form-control" />
+                    <span asp-validation-for="SSWIEndDate" class="text-danger"></span>
+                </div>
+                <br />
                 <div class="form-group">
                     <label asp-for="ZeroToleranceStartDate" class="control-label"></label>
                     <input asp-for="ZeroToleranceStartDate" class="form-control" />
@@ -849,6 +1002,17 @@
                 <h3>APD Supported Living</h3>
                 //waiver providers
                 <div class="form-group">
+                    <label asp-for="SSWIStartDate" class="control-label"></label>
+                    <input asp-for="SSWIStartDate" class="form-control" />
+                    <span asp-validation-for="SSWIStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SSWIEndDate" class="control-label"></label>
+                    <input asp-for="SSWIEndDate" class="form-control" />
+                    <span asp-validation-for="SSWIEndDate" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
                     <label asp-for="ZeroToleranceStartDate" class="control-label"></label>
                     <input asp-for="ZeroToleranceStartDate" class="form-control" />
                     <span asp-validation-for="ZeroToleranceStartDate" class="text-danger"></span>
@@ -955,6 +1119,17 @@
             {
                 <h3>APD Supported Employment</h3>
                 //waiver providers
+                <div class="form-group">
+                    <label asp-for="SSWIStartDate" class="control-label"></label>
+                    <input asp-for="SSWIStartDate" class="form-control" />
+                    <span asp-validation-for="SSWIStartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SSWIEndDate" class="control-label"></label>
+                    <input asp-for="SSWIEndDate" class="form-control" />
+                    <span asp-validation-for="SSWIEndDate" class="text-danger"></span>
+                </div>
+                <br />
                 <div class="form-group">
                     <label asp-for="ZeroToleranceStartDate" class="control-label"></label>
                     <input asp-for="ZeroToleranceStartDate" class="form-control" />

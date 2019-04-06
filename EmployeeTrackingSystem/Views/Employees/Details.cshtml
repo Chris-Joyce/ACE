@@ -66,7 +66,7 @@
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-         <dt>
+        <dt>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </dt>
         <dd>
@@ -235,11 +235,11 @@
         <dd>
             @Html.DisplayFor(model => model.JSOLocalBGSEndDate)
         </dd>
-        @if (Model.CBHT)
+        @if (Model.ARNP)
         {
-            <h3>CBHT</h3>
+            <h3>ARNP</h3>
             <dt>
-                ANRP
+                DEA
             </dt>
             <dd>
 
@@ -248,14 +248,54 @@
                 Start Date
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.ANRPStartDate)
+                @Html.DisplayFor(model => model.DEAStartDate)
             </dd>
             <dt>
                 End Date
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.ANRPEndDate)
+                @Html.DisplayFor(model => model.DEAEndDate)
             </dd>
+            <dt>
+                Licence
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ARNPLicenceStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ARNPLicenceEndDate)
+            </dd>
+            <dt>
+                Insurance
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ARNPLicenceStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ARNPLicenceEndDate)
+            </dd>
+        }
+        @if (Model.CBHT)
+        {
+            <h3>CBHT</h3>
             <dt>
                 Clinical Competence
             </dt>
@@ -350,6 +390,24 @@
         @if (Model.APDSupportedLiving && Model.APDSupportedEmployement)
         {
             <h3>APD Supported Living & Supported Employment</h3>
+            <dt>
+                Social Security Work Incentives
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SSWIStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SSWIEndDate)
+            </dd>
             <dt>
                 Zero Tolerance
             </dt>
@@ -565,6 +623,24 @@
         {
             <h3>APD Supported Living</h3>
             <dt>
+                Social Security Work Incentives
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SSWIStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SSWIEndDate)
+            </dd>
+            <dt>
                 Zero Tolerance
             </dt>
             <dd>
@@ -718,6 +794,24 @@
         else if (Model.APDSupportedEmployement)
         {
             <h3>APD Supported Employment</h3>
+            <dt>
+                Social Security Work Incentives
+            </dt>
+            <dd>
+
+            </dd>
+            <dt>
+                Start Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SSWIStartDate)
+            </dd>
+            <dt>
+                End Date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SSWIEndDate)
+            </dd>
             <dt>
                 Zero Tolerance
             </dt>
