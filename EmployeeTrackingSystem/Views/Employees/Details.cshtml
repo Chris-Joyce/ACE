@@ -11,9 +11,52 @@
             white-space: normal;
             margin-bottom: 2px;
         }
+
         .dl-horizontal dd {
             margin-left: 310px;
         }
+
+        /* basic positioning */
+        .legend {
+            list-style: none;
+        }
+
+            .legend dd {
+                float: left;
+                margin-right: 10px;
+            }
+
+            .legend span {
+                border: 1px solid #ccc;
+                float: left;
+                width: 16px;
+                height: 16px;
+                margin: 2px;
+            }
+            /* your colors */
+            .legend .good {
+                background-color: #00FF00;
+            }
+
+            .legend .lessthan60 {
+                background-color: #d7ff6d;
+            }
+
+            .legend .lessthan30 {
+                background-color: #FFFF00;
+            }
+
+            .legend .lessthan14 {
+                background-color: #FFC500;
+            }
+
+            .legend .lessthan7 {
+                background-color: #FF6500;
+            }
+
+            .legend .expired {
+                background-color: #FF0000;
+            }
     </style>
 </head>
 
@@ -94,9 +137,48 @@
         <dt>
             DCF Hippa
         </dt>
-        <dd>
+        @if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.DCFHippaEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.DCFHippaEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -112,9 +194,48 @@
         <dt>
             Vehicle Registration
         </dt>
-        <dd>
+        @if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.VehicleRegistrationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -130,9 +251,48 @@
         <dt>
             Vehicle Insurance Card
         </dt>
-        <dd>
+        @if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.VehicleInsuranceCardEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -148,9 +308,48 @@
         <dt>
             Yearly Evaluation
         </dt>
-        <dd>
+        @if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.YearlyEvaluationEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -166,9 +365,48 @@
         <dt>
             Target Case Managment Certification
         </dt>
-        <dd>
+        @if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.TargetCaseManagmentEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -184,9 +422,48 @@
         <dt>
             Affidavit of Good Moral Character
         </dt>
-        <dd>
+        @if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -202,9 +479,48 @@
         <dt>
             FDLE-BGS
         </dt>
-        <dd>
+        @if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.FDLEBGSEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.FDLEBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -220,9 +536,48 @@
         <dt>
             JSO Local BGS
         </dt>
-        <dd>
+        @if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 0)
+        {
+            <dd class="legend">
+                <span class="expired"></span>Expired
+            </dd>
+        }
+        else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 7)
+        {
+            <dd class="legend">
+                <span class="lessthan7"></span>Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 14)
+        {
+            <dd class="legend">
+                <span class="lessthan14"></span>Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30)
+        {
+            <dd class="legend">
+                <span class="lessthan30"></span>Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 60)
+        {
+            <dd class="legend">
+                <span class="lessthan60"></span>Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else if ((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays > 60)
+        {
+            <dd class="legend">
+                <span class="good"></span>Expires in @((Model.JSOLocalBGSEndDate - DateTime.Now).Days) Days
+            </dd>
+        }
+        else
+        {
+            <dd>
 
-        </dd>
+            </dd>
+        }
         <dt>
             Start Date
         </dt>
@@ -241,9 +596,48 @@
             <dt>
                 DEA
             </dt>
-            <dd>
+            @if ((Model.DEAEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.DEAEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.DEAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DEAEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.DEAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DEAEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.DEAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DEAEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.DEAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DEAEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.DEAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -259,9 +653,48 @@
             <dt>
                 Licence
             </dt>
-            <dd>
+            @if ((Model.ARNPLicenceEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ARNPLicenceEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ARNPLicenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ARNPLicenceEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ARNPLicenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ARNPLicenceEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ARNPLicenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ARNPLicenceEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ARNPLicenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ARNPLicenceEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ARNPLicenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -277,20 +710,59 @@
             <dt>
                 Insurance
             </dt>
-            <dd>
+            @if ((Model.InsuranceEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.InsuranceEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.InsuranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InsuranceEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.InsuranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InsuranceEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.InsuranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InsuranceEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.InsuranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InsuranceEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.InsuranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.ARNPLicenceStartDate)
+                @Html.DisplayFor(model => model.InsuranceStartDate)
             </dd>
             <dt>
                 End Date
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.ARNPLicenceEndDate)
+                @Html.DisplayFor(model => model.InsuranceEndDate)
             </dd>
         }
         @if (Model.CBHT)
@@ -299,9 +771,48 @@
             <dt>
                 Clinical Competence
             </dt>
-            <dd>
+            @if ((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ClinicalCompetenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ClinicalCompetenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ClinicalCompetenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ClinicalCompetenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ClinicalCompetenceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -317,9 +828,48 @@
             <dt>
                 Maintaining Client and Personal Safety
             </dt>
-            <dd>
+            @if ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ClientPersonalSafetyEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ClientPersonalSafetyEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ClientPersonalSafetyEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ClientPersonalSafetyEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ClientPersonalSafetyEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -335,9 +885,48 @@
             <dt>
                 Documentation and Patient Confidentiality
             </dt>
-            <dd>
+            @if ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.PatientConfidentialityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.PatientConfidentialityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.PatientConfidentialityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.PatientConfidentialityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.PatientConfidentialityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -353,9 +942,48 @@
             <dt>
                 Ethical and Professional Responsibilities
             </dt>
-            <dd>
+            @if ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.EthicalProfessionalEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.EthicalProfessionalEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.EthicalProfessionalEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.EthicalProfessionalEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.EthicalProfessionalEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -371,9 +999,48 @@
             <dt>
                 Electives
             </dt>
-            <dd>
+            @if ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ElectivesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ElectivesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ElectivesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ElectivesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ElectivesEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ElectivesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -393,9 +1060,48 @@
             <dt>
                 Social Security Work Incentives
             </dt>
-            <dd>
+            @if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -411,9 +1117,48 @@
             <dt>
                 Zero Tolerance
             </dt>
-            <dd>
+            @if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -429,9 +1174,48 @@
             <dt>
                 Direct Care Core Competencies
             </dt>
-            <dd>
+            @if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -447,9 +1231,48 @@
             <dt>
                 First Aid
             </dt>
-            <dd>
+            @if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -465,9 +1288,48 @@
             <dt>
                 APD HIPAA
             </dt>
-            <dd>
+            @if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -483,9 +1345,48 @@
             <dt>
                 CPR
             </dt>
-            <dd>
+            @if ((Model.CPREndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -501,9 +1402,48 @@
             <dt>
                 HIV-AIDS/Bloodborne Pathogens
             </dt>
-            <dd>
+            @if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -519,9 +1459,48 @@
             <dt>
                 Social Security Work Incentives
             </dt>
-            <dd>
+            @if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -537,9 +1516,48 @@
             <dt>
                 In-service Training
             </dt>
-            <dd>
+            @if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -561,9 +1579,48 @@
             <dt>
                 In-service Training Related to Employment
             </dt>
-            <dd>
+            @if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -585,9 +1642,48 @@
             <dt>
                 Medication Administration Training
             </dt>
-            <dd>
+            @if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -603,9 +1699,48 @@
             <dt>
                 Reactive Strategies
             </dt>
-            <dd>
+            @if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -625,9 +1760,48 @@
             <dt>
                 Social Security Work Incentives
             </dt>
-            <dd>
+            @if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -643,9 +1817,48 @@
             <dt>
                 Zero Tolerance
             </dt>
-            <dd>
+            @if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -661,9 +1874,48 @@
             <dt>
                 Direct Care Core Competencies
             </dt>
-            <dd>
+            @if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -679,9 +1931,48 @@
             <dt>
                 First Aid
             </dt>
-            <dd>
+            @if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -697,9 +1988,48 @@
             <dt>
                 APD HIPAA
             </dt>
-            <dd>
+            @if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -715,9 +2045,48 @@
             <dt>
                 CPR
             </dt>
-            <dd>
+            @if ((Model.CPREndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -733,9 +2102,48 @@
             <dt>
                 HIV-AIDS/Bloodborne Pathogens
             </dt>
-            <dd>
+            @if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -751,9 +2159,48 @@
             <dt>
                 Social Security Work Incentives
             </dt>
-            <dd>
+            @if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SocialSecurityEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.SocialSecurityEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -769,9 +2216,48 @@
             <dt>
                 In-service Training
             </dt>
-            <dd>
+            @if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.InServiceTrainingEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -797,9 +2283,48 @@
             <dt>
                 Social Security Work Incentives
             </dt>
-            <dd>
+            @if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -815,9 +2340,48 @@
             <dt>
                 Zero Tolerance
             </dt>
-            <dd>
+            @if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ZeroToleranceEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -833,9 +2397,48 @@
             <dt>
                 Direct Care Core Competencies
             </dt>
-            <dd>
+            @if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.DCCCEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.DCCCEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -851,9 +2454,48 @@
             <dt>
                 First Aid
             </dt>
-            <dd>
+            @if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.FirstAidEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.FirstAidEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -869,9 +2511,48 @@
             <dt>
                 APD HIPAA
             </dt>
-            <dd>
+            @if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.APDHIPAAEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -887,9 +2568,48 @@
             <dt>
                 CPR
             </dt>
-            <dd>
+            @if ((Model.CPREndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.CPREndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.CPREndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -905,9 +2625,48 @@
             <dt>
                 HIV-AIDS/Bloodborne Pathogens
             </dt>
-            <dd>
+            @if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.HIVAIDSEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -920,15 +2679,51 @@
             <dd>
                 @Html.DisplayFor(model => model.HIVAIDSEndDate)
             </dd>
-            <dd>
-
-            </dd>
             <dt>
                 In-service Training Related to Employment
             </dt>
-            <dd>
+            @if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.RelatedToEmploymentEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -950,9 +2745,48 @@
             <dt>
                 Medication Administration Training
             </dt>
-            <dd>
+            @if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.MedicationAdministrationEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
@@ -968,9 +2802,48 @@
             <dt>
                 Reactive Strategies
             </dt>
-            <dd>
+            @if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 0)
+            {
+                <dd class="legend">
+                    <span class="expired"></span>Expired
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 7)
+            {
+                <dd class="legend">
+                    <span class="lessthan7"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 14)
+            {
+                <dd class="legend">
+                    <span class="lessthan14"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30)
+            {
+                <dd class="legend">
+                    <span class="lessthan30"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 60)
+            {
+                <dd class="legend">
+                    <span class="lessthan60"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else if ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays > 60)
+            {
+                <dd class="legend">
+                    <span class="good"></span>Expires in @((Model.ReactiveStrategiesEndDate - DateTime.Now).Days) Days
+                </dd>
+            }
+            else
+            {
+                <dd>
 
-            </dd>
+                </dd>
+            }
             <dt>
                 Start Date
             </dt>
