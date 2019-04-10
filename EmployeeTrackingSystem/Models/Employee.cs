@@ -200,13 +200,6 @@ namespace EmployeeTrackingSystem.Models
         [DataType(DataType.Date)]
         public DateTime HIVAIDSEndDate { get; set; }
 
-        [DisplayName("Social Security Work Incentives Start Date")]
-        [DataType(DataType.Date)]
-        public DateTime SSWIStartDate { get; set; }
-        [DisplayName("Social Security Work Incentives End Date")]
-        [DataType(DataType.Date)]
-        public DateTime SSWIEndDate { get; set; }
-
         //supported living only
 
         [DisplayName("Social Security Work Incentives Start Date")]

@@ -203,14 +203,7 @@ namespace EmployeeTrackingSystem.Controllers
 
                     if (employeeList[i].APDSupportedLiving || employeeList[i].APDSupportedEmployement)
                     {
-                        //both
-                        worksheet.Cells[row, 1].Value = employeeList[i].Name;
-                        worksheet.Cells[row, 12].Value = "Social Security Work Incentives";
-                        worksheet.Cells[row, 13].Value = employeeList[i].SSWIStartDate;
-                        worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
-                        worksheet.Cells[row, 14].Value = employeeList[i].SSWIEndDate;
-                        worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
-                        row++;
+                        //both     
                         worksheet.Cells[row, 1].Value = employeeList[i].Name;
                         worksheet.Cells[row, 12].Value = "Zero Tolerance";
                         worksheet.Cells[row, 13].Value = employeeList[i].ZeroToleranceStartDate;

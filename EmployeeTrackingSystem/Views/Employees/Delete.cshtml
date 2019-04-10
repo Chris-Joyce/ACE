@@ -1058,63 +1058,6 @@
         {
             <h3>APD Supported Living & Supported Employment</h3>
             <dt>
-                Social Security Work Incentives
-            </dt>
-            @if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 0)
-            {
-                <dd class="legend">
-                    <span class="expired"></span>Expired
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 7)
-            {
-                <dd class="legend">
-                    <span class="lessthan7"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 14)
-            {
-                <dd class="legend">
-                    <span class="lessthan14"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 30)
-            {
-                <dd class="legend">
-                    <span class="lessthan30"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 60)
-            {
-                <dd class="legend">
-                    <span class="lessthan60"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays > 60)
-            {
-                <dd class="legend">
-                    <span class="good"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else
-            {
-                <dd>
-
-                </dd>
-            }
-            <dt>
-                Start Date
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SSWIStartDate)
-            </dd>
-            <dt>
-                End Date
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SSWIEndDate)
-            </dd>
-            <dt>
                 Zero Tolerance
             </dt>
             @if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0)
@@ -1758,63 +1701,6 @@
         {
             <h3>APD Supported Living</h3>
             <dt>
-                Social Security Work Incentives
-            </dt>
-            @if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 0)
-            {
-                <dd class="legend">
-                    <span class="expired"></span>Expired
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 7)
-            {
-                <dd class="legend">
-                    <span class="lessthan7"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 14)
-            {
-                <dd class="legend">
-                    <span class="lessthan14"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 30)
-            {
-                <dd class="legend">
-                    <span class="lessthan30"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 60)
-            {
-                <dd class="legend">
-                    <span class="lessthan60"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays > 60)
-            {
-                <dd class="legend">
-                    <span class="good"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else
-            {
-                <dd>
-
-                </dd>
-            }
-            <dt>
-                Start Date
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SSWIStartDate)
-            </dd>
-            <dt>
-                End Date
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SSWIEndDate)
-            </dd>
-            <dt>
                 Zero Tolerance
             </dt>
             @if ((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0)
@@ -2280,63 +2166,6 @@
         else if (Model.APDSupportedEmployement)
         {
             <h3>APD Supported Employment</h3>
-            <dt>
-                Social Security Work Incentives
-            </dt>
-            @if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 0)
-            {
-                <dd class="legend">
-                    <span class="expired"></span>Expired
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 7)
-            {
-                <dd class="legend">
-                    <span class="lessthan7"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 14)
-            {
-                <dd class="legend">
-                    <span class="lessthan14"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 30)
-            {
-                <dd class="legend">
-                    <span class="lessthan30"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays <= 60)
-            {
-                <dd class="legend">
-                    <span class="lessthan60"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else if ((Model.SSWIEndDate - DateTime.Now).TotalDays > 60)
-            {
-                <dd class="legend">
-                    <span class="good"></span>Expires in @((Model.SSWIEndDate - DateTime.Now).Days) Days
-                </dd>
-            }
-            else
-            {
-                <dd>
-
-                </dd>
-            }
-            <dt>
-                Start Date
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SSWIStartDate)
-            </dd>
-            <dt>
-                End Date
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.SSWIEndDate)
-            </dd>
             <dt>
                 Zero Tolerance
             </dt>
