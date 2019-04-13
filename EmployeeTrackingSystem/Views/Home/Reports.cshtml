@@ -16,47 +16,242 @@
         </th>
     </tr>*@
 </table>
-<br>
-<table id="MainHeader" style="width:100%">
-    <tr>
-        <th>@Html.DisplayNameFor(model => model.Name)</th>
-        <th>@Html.DisplayNameFor(model => model.Email)</th>
-        <th>@Html.DisplayNameFor(model => model.Address)</th>
-        <th>@Html.DisplayNameFor(model => model.City)</th>
-        <th>@Html.DisplayNameFor(model => model.State)</th>
-        <th>@Html.DisplayNameFor(model => model.Zip)</th>
-        <th>@Html.DisplayNameFor(model => model.Phone)</th>
-        <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            <td>@Html.DisplayFor(modelItem => item.Email)</td>
-            <td>@Html.DisplayFor(modelItem => item.Address)</td>
-            <td>@Html.DisplayFor(modelItem => item.City)</td>
-            <td>@Html.DisplayFor(modelItem => item.State)</td>
-            <td>@Html.DisplayFor(modelItem => item.Zip)</td>
-            <td>@Html.DisplayFor(modelItem => item.Phone)</td>
-            <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
-        </tr>
-    }
-    <tr>
-        <th>@Html.DisplayNameFor(model => model.Name)</th>
-        <th>@Html.DisplayNameFor(model => model.Email)</th>
-        <th>@Html.DisplayNameFor(model => model.HireDate)</th>
-        <th>@Html.DisplayNameFor(model => model.LicenseNumber)</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            <td>@Html.DisplayFor(modelItem => item.Email)</td>
-            <td>@Html.DisplayFor(modelItem => item.HireDate)</td>
-            <td>@Html.DisplayFor(modelItem => item.LicenseNumber)</td>
-        </tr>
-    }
-</table>
-<br>
-<br>
+<a asp-action="Download" class="btn btn-primary">Download Report</a>
+<br /><br />
+      <table class="table table-striped">
+          <tr>
+              <th>@Html.DisplayNameFor(model => model.Name)</th>
+              <th>@Html.DisplayNameFor(model => model.Address)</th>
+              <th>@Html.DisplayNameFor(model => model.City)</th>
+              <th>@Html.DisplayNameFor(model => model.State)</th>
+              <th>@Html.DisplayNameFor(model => model.Zip)</th>
+              <th>@Html.DisplayNameFor(model => model.Phone)</th>
+              <th>@Html.DisplayNameFor(model => model.Email)</th>
+              <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+              <th>@Html.DisplayNameFor(model => model.Title)</th>
+              <th>@Html.DisplayNameFor(model => model.HireDate)</th>
+              <th>@Html.DisplayNameFor(model => model.LicenseNumber)</th>
+              <th>Certification Type</th>
+              <th>Certification Start Date</th>
+              <th>Certification End Date</th>
+              <th>Hours</th>
+          </tr>
+          @foreach (var item in Model)
+          {
+              <tr>
+                  <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                  <td>@Html.DisplayFor(modelItem => item.City)</td>
+                  <td>@Html.DisplayFor(modelItem => item.State)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Zip)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                  <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                  <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                  <td>@Html.DisplayFor(modelItem => item.HireDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.LicenseNumber)</td>
+                  <td>DCF Hippa</td>
+                  <td>@Html.DisplayFor(modelItem => item.DCFHippastartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.DCFHippaEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>Vehicle Registration</td>
+                  <td>@Html.DisplayFor(modelItem => item.VehicleRegistrationStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.VehicleRegistrationEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>Vehicle Insurance</td>
+                  <td>@Html.DisplayFor(modelItem => item.VehicleInsuranceCardStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.VehicleInsuranceCardEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>Yearly Evaluation</td>
+                  <td>@Html.DisplayFor(modelItem => item.YearlyEvaluationStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.YearlyEvaluationEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>Target Case Managment</td>
+                  <td>@Html.DisplayFor(modelItem => item.TargetCaseManagmentStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.TargetCaseManagmentEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>Affidavit Of Good Moral Character</td>
+                  <td>@Html.DisplayFor(modelItem => item.AffidavitOfGoodMoralCharacterStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.AffidavitOfGoodMoralCharacterEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>FDLE-BGS</td>
+                  <td>@Html.DisplayFor(modelItem => item.FDLEBGSStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.FDLEBGSEndDate)</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td colspan="11"></td>
+                  <td>JSO Local BGS</td>
+                  <td>@Html.DisplayFor(modelItem => item.JSOLocalBGSStartDate)</td>
+                  <td>@Html.DisplayFor(modelItem => item.JSOLocalBGSEndDate)</td>
+                  <td></td>
+              </tr>
+              if (item.ARNP)
+              {
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>DEA</td>
+                      <td>@Html.DisplayFor(modelItem => item.DEAStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.DEAEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>ARNP Licence</td>
+                      <td>@Html.DisplayFor(modelItem => item.ARNPLicenceStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.ARNPLicenceEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Insurance</td>
+                      <td>@Html.DisplayFor(modelItem => item.InsuranceStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.InsuranceEndDate)</td>
+                      <td></td>
+                  </tr>
+              }
+              if (item.CBHT)
+              {
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Clinical Competence</td>
+                      <td>@Html.DisplayFor(modelItem => item.ClinicalCompetenceStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.ClinicalCompetenceEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Maintaining Client and Personal Safety</td>
+                      <td>@Html.DisplayFor(modelItem => item.ClientPersonalSafetyStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.ClientPersonalSafetyEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Documentation and Patient Confidentiality</td>
+                      <td>@Html.DisplayFor(modelItem => item.PatientConfidentialityStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.PatientConfidentialityEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Ethical and Professional Responsibilities</td>
+                      <td>@Html.DisplayFor(modelItem => item.EthicalProfessionalStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.EthicalProfessionalEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Electives</td>
+                      <td>@Html.DisplayFor(modelItem => item.ElectivesStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.ElectivesEndDate)</td>
+                      <td></td>
+                  </tr>
+              }
+              if (item.APDSupportedLiving || item.APDSupportedEmployement)
+              {
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Zero Tolerance</td>
+                      <td>@Html.DisplayFor(modelItem => item.ZeroToleranceStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.ZeroToleranceEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Direct Care Core Competencies</td>
+                      <td>@Html.DisplayFor(modelItem => item.DCCCStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.DCCCEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>First Aid</td>
+                      <td>@Html.DisplayFor(modelItem => item.FirstAidStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.FirstAidEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>APD HIPAA</td>
+                      <td>@Html.DisplayFor(modelItem => item.APDHIPAAStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.APDHIPAAEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>CPR</td>
+                      <td>@Html.DisplayFor(modelItem => item.CPRStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.CPREndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>HIV-AIDS/Bloodborne Pathogens</td>
+                      <td>@Html.DisplayFor(modelItem => item.HIVAIDSStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.HIVAIDSEndDate)</td>
+                      <td></td>
+                  </tr>
+              }
+              if (item.APDSupportedLiving)
+              {
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Social Security Work Incentives</td>
+                      <td>@Html.DisplayFor(modelItem => item.SocialSecurityStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.SocialSecurityEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>In-service Training</td>
+                      <td>@Html.DisplayFor(modelItem => item.InServiceTrainingStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.InServiceTrainingEndDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.InServiceTrainingHours)</td>
+                  </tr>
+              }
+              if (item.APDSupportedEmployement)
+              {
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>In-service Training Related to Employment</td>
+                      <td>@Html.DisplayFor(modelItem => item.RelatedToEmploymentStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.RelatedToEmploymentEndDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.RelatedToEmploymentHours)</td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Medication Administration</td>
+                      <td>@Html.DisplayFor(modelItem => item.MedicationAdministrationStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.MedicationAdministrationEndDate)</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="11"></td>
+                      <td>Reactive Strategies</td>
+                      <td>@Html.DisplayFor(modelItem => item.ReactiveStrategiesStartDate)</td>
+                      <td>@Html.DisplayFor(modelItem => item.ReactiveStrategiesEndDate)</td>
+                      <td></td>
+                  </tr>
+              }
+          }
+      </table>
 <a asp-action="Download" class="btn btn-primary">Download Report</a>

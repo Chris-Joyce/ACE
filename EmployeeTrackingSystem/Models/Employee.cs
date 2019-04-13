@@ -16,12 +16,10 @@ namespace EmployeeTrackingSystem.Models
         [EmailAddress]
         public string Email { get; set; }
         public string Title { get; set; }
-        //public string RequiredCerts { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public int Zip { get; set; }
-        //[RegularExpression(@"^\+1 \(\d{3}\) \d{3}-\d{4}$", ErrorMessage = "Invalid Phone Number.")]
         public string Phone { get; set; }
         [DisplayName("Date Of Birth")]
         [DataType(DataType.Date)]

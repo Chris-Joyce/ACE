@@ -109,7 +109,7 @@ namespace EmployeeTrackingSystem.Controllers
                     worksheet.Cells[row, 14].Style.Numberformat.Format = "mm/dd/yyyy";
                     row++;
                     worksheet.Cells[row, 1].Value = employeeList[i].Name;
-                    worksheet.Cells[row, 12].Value = "TargetCaseManagment";
+                    worksheet.Cells[row, 12].Value = "Target Case Managment";
                     worksheet.Cells[row, 13].Value = employeeList[i].TargetCaseManagmentStartDate;
                     worksheet.Cells[row, 13].Style.Numberformat.Format = "mm/dd/yyyy";
                     worksheet.Cells[row, 14].Value = employeeList[i].TargetCaseManagmentEndDate;
