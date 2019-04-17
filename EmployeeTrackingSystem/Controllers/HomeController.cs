@@ -327,7 +327,7 @@ namespace EmployeeTrackingSystem.Controllers
             return View(await _context.Employee.ToListAsync());
         }
         
-         public IActionResult Open(string id)
+        public async Task<IActionResult> Open(string id)
         {
             if (id == null)
             {
