@@ -342,6 +342,7 @@ namespace EmployeeTrackingSystem.Controllers
             }
 
             return View(employee);
+            //return View(await _context.Employee.ToListAsync());
         }
 
         
