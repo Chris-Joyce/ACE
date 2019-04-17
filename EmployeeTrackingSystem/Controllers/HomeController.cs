@@ -327,9 +327,21 @@ namespace EmployeeTrackingSystem.Controllers
             return View(await _context.Employee.ToListAsync());
         }
         
-         public IActionResult Open()
+         public IActionResult Open(string id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var employee = await _context.Employee
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return View(employee);
         }
 
         
