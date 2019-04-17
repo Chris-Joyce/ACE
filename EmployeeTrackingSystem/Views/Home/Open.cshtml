@@ -1,12 +1,13 @@
-@model EmployeeTrackingSystem.Models.EmailModel
+@model EmployeeTrackingSystem.Models.Employee
+
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <head>
     <style>
+
 
         .dl-horizontal dt {
             width: 290px;
@@ -19,42 +20,420 @@
         }
     </style>
 </head>
-
 <div>
-    
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.From)@Html.Raw(":")
-            
+            From:
+            @* @Html.DisplayNameFor(model => model.From)@Html.Raw(":")*@
+
         </dt>
         <dd>
             admin@ace.com
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Subject)@Html.Raw(":")
+            Subject:
+            @*@Html.DisplayNameFor(model => model.Subject)@Html.Raw(":")*@
 
-            
         </dt>
         <dd>
-            30 day notification
+
+
+            @if (((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your DCF Hippa has Expired</font>
+                </td>
+            }
+            else if (((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Registration has Expired</font>
+                </td>
+            }
+            else if (((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Insurance Card has Expired</font>
+                </td>
+            }
+            else if (((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Yearly Evaluation has Expired</font>
+                </td>
+            }
+            else if (((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Target Case Management has Expired</font>
+                </td>
+            }
+            else if (((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Affidavit Of Good Moral Character has Expired</font>
+                </td>
+            }
+            else if (((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your FDLE-BGS has Expired</font>
+                </td>
+            }
+            else if (((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 0))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your JSO Local BGS has Expired</font>
+                </td>
+            }
+            else if ((Model.CBHT && (((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 0) || ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 0) || ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 0) || ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 0) || ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 0))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your CBHT has Expired</font>
+                </td>
+            }
+            else if (((Model.APDSupportedLiving || Model.APDSupportedEmployement) && (((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 0) || ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 0) || ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 0) || ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 0) || ((Model.CPREndDate - DateTime.Now).TotalDays <= 0) || ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 0))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Expired</font>
+                </td>
+            }
+            else if ((Model.APDSupportedLiving && (((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 0) || ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 0))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Expired.</font>
+                </td>
+            }
+            else if ((Model.APDSupportedEmployement && (((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 0) || ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 0) || ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 0))))
+            {
+                <td>
+                    <font>Dear, @Html.DisplayFor(model => model.Name) APDSupported Employement has Expired</font>
+                </td>
+            }
+            @*When certification is within 7 days of expiration*@
+
+            else if (((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your DCF Hippa has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Registration has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Insurance Card has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Yearly Evaluation has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Target Case Management has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Affidavit Of Good Moral Character has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your FDLE-BGS has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 7))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your JSO Local BGS has Less than 7 days</font>
+                </td>
+            }
+            else if ((Model.CBHT && (((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 7) || ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 7) || ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 7) || ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 7) || ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 7))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your CBHT has Less than 7 days</font>
+                </td>
+            }
+            else if (((Model.APDSupportedLiving || Model.APDSupportedEmployement) && (((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 7) || ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 7) || ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 7) || ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 7) || ((Model.CPREndDate - DateTime.Now).TotalDays <= 7) || ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 7))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 7 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedLiving && (((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 7) || ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 7))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 7 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedEmployement && (((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 7) || ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 7) || ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 7))))
+            {
+                <td>
+                    <font>Dear, @Html.DisplayFor(model => model.Name) APDSupported Employement has Less than 7 days</font>
+                </td>
+            }
+
+            @* When certification is less than 14 days from expiration*@
+
+            else if (((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your DCF Hippa has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Registration has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Insurance Card has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Yearly Evaluation has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Target Case Management has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Affidavit Of Good Moral Character has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your FDLE-BGS has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 14))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your JSO Local BGS has Less than 14 days</font>
+                </td>
+            }
+            else if ((Model.CBHT && (((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 14) || ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 14) || ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 14) || ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 14) || ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 14))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your CBHT has Less than 14 days</font>
+                </td>
+            }
+            else if (((Model.APDSupportedLiving || Model.APDSupportedEmployement) && (((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 14) || ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 14) || ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 14) || ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 14) || ((Model.CPREndDate - DateTime.Now).TotalDays <= 14) || ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 14))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 14 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedLiving && (((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 14) || ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 14))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 14 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedEmployement && (((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 14) || ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 14) || ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 14))))
+            {
+                <td>
+                    <font>Dear, @Html.DisplayFor(model => model.Name) APDSupported Employement has Less than 14 days</font>
+                </td>
+            }
+
+            @*when certifications are less than 30 days from expiration *@
+
+            else if (((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your DCF Hippa has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Registration has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Insurance Card has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Yearly Evaluation has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Target Case Management has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Affidavit Of Good Moral Character has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your FDLE-BGS has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 30))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your JSO Local BGS has Less than 30 days</font>
+                </td>
+            }
+            else if ((Model.CBHT && (((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 30) || ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 30) || ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 30) || ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 30) || ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 30))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your CBHT has Less than 30 days</font>
+                </td>
+            }
+            else if (((Model.APDSupportedLiving || Model.APDSupportedEmployement) && (((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 30) || ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 30) || ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 30) || ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 30) || ((Model.CPREndDate - DateTime.Now).TotalDays <= 30) || ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 30))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 30 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedLiving && (((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 30) || ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 30))))
+            {
+                <td>
+                    <font>Dear, @Html.DisplayFor(model => model.Name) APDSupported Employement has Less than 30 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedEmployement && (((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 30) || ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 30) || ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 30))))
+            {
+                <td>
+                    <font><strong>Less than 30 days</strong></font>
+                </td>
+            }
+
+            @*if certification is 60 days from expiration*@
+
+            else if (((Model.DCFHippaEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your DCF Hippa has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.VehicleRegistrationEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Registration has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.VehicleInsuranceCardEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Vehicle Insurance Card has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.YearlyEvaluationEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Yearly Evaluation has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.TargetCaseManagmentEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Target Case Management has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.AffidavitOfGoodMoralCharacterEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your Affidavit Of Good Moral Character has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.FDLEBGSEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your FDLE-BGS has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.JSOLocalBGSEndDate - DateTime.Now).TotalDays <= 60))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your JSO Local BGS has strong>Less than 60 days</font>
+                </td>
+            }
+            else if ((Model.CBHT && (((Model.ClinicalCompetenceEndDate - DateTime.Now).TotalDays <= 60) || ((Model.ClientPersonalSafetyEndDate - DateTime.Now).TotalDays <= 60) || ((Model.PatientConfidentialityEndDate - DateTime.Now).TotalDays <= 60) || ((Model.EthicalProfessionalEndDate - DateTime.Now).TotalDays <= 60) || ((Model.ElectivesEndDate - DateTime.Now).TotalDays <= 60))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your CBHT has Less than 60 days</font>
+                </td>
+            }
+            else if (((Model.APDSupportedLiving || Model.APDSupportedEmployement) && (((Model.ZeroToleranceEndDate - DateTime.Now).TotalDays <= 60) || ((Model.DCCCEndDate - DateTime.Now).TotalDays <= 60) || ((Model.FirstAidEndDate - DateTime.Now).TotalDays <= 60) || ((Model.APDHIPAAEndDate - DateTime.Now).TotalDays <= 60) || ((Model.CPREndDate - DateTime.Now).TotalDays <= 60) || ((Model.HIVAIDSEndDate - DateTime.Now).TotalDays <= 60))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 60 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedLiving && (((Model.SocialSecurityEndDate - DateTime.Now).TotalDays <= 60) || ((Model.InServiceTrainingEndDate - DateTime.Now).TotalDays <= 60))))
+            {
+                <td>
+                    <font>Dear @Html.DisplayFor(model => model.Name), your APDSupported Living has Less than 60 days</font>
+                </td>
+            }
+            else if ((Model.APDSupportedEmployement && (((Model.RelatedToEmploymentEndDate - DateTime.Now).TotalDays <= 60) || ((Model.MedicationAdministrationEndDate - DateTime.Now).TotalDays <= 60) || ((Model.ReactiveStrategiesEndDate - DateTime.Now).TotalDays <= 60))))
+            {
+                <td>
+                    <font>Dear, @Html.DisplayFor(model => model.Name) APDSupported Employement has Less than 60 days</font>
+                </td>
+            }
+            else
+            {
+                <td></td>
+            }
+
         </dd>
+        <dt></dt>
         <dt>
             <br>
-            @Html.DisplayNameFor(model => model.Message)@Html.Raw(":") 
-        </dt>
-        <dd>
             <br>
-            Hello Brenda Car, we would like to inform you that your HIPPA certifications is now expired. Please renew as soon as possible. <br><br>
-
-            Robin Williams <br>
-            Agency For Community Empowerment
-        </dd>
-        <dt>  <br><br>  </dt><dd></dd>
-        <dt>Date Sent:</dt>
-        <dd>
-            3/25/2019
-        </dd>
+            @*@Html.DisplayNameFor(model => model.Message)@Html.Raw(":")*@
+            
+        </dt>
 
     </dl>
 </div>
+
+<div class="container body-content">
+    <hr />
+    <footer>
+        <p>&copy; Agency for Community Empowerment</p>
+        <br><br><br>
+        <a asp-action="Email">Back to List</a>
+    </footer>
+</div>
+
