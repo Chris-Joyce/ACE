@@ -24,12 +24,6 @@ namespace EmployeeTrackingSystem.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            ViewData["Message"] = "The Employee Portal";
-            return View();
-        }
-
         public async Task<IActionResult> Reports()
         {
             ViewData["Message"] = "The Reports page";
@@ -326,7 +320,8 @@ namespace EmployeeTrackingSystem.Controllers
 
             return View(await _context.Employee.ToListAsync());
         }
-        
+
+        [Authorize(Roles = "Admin, Manager")]
         public async Task<IActionResult> Open(string id)
         {
             if (id == null)
