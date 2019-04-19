@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace EmployeeTrackingSystem.Data.Migrations
+namespace EmployeeTrackingSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190331193016_Employee")]
-    partial class Employee
+    [Migration("20190419003156_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,10 +26,6 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("ANRPEndDate");
-
-                    b.Property<DateTime>("ANRPStartDate");
-
                     b.Property<DateTime>("APDHIPAAEndDate");
 
                     b.Property<DateTime>("APDHIPAAStartDate");
@@ -37,6 +33,12 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<bool>("APDSupportedEmployement");
 
                     b.Property<bool>("APDSupportedLiving");
+
+                    b.Property<bool>("ARNP");
+
+                    b.Property<DateTime>("ARNPLicenceEndDate");
+
+                    b.Property<DateTime>("ARNPLicenceStartDate");
 
                     b.Property<string>("Address");
 
@@ -67,6 +69,10 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<DateTime>("DCFHippaEndDate");
 
                     b.Property<DateTime>("DCFHippastartDate");
+
+                    b.Property<DateTime>("DEAEndDate");
+
+                    b.Property<DateTime>("DEAStartDate");
 
                     b.Property<DateTime>("DateOfBirth");
 
@@ -99,6 +105,10 @@ namespace EmployeeTrackingSystem.Data.Migrations
                     b.Property<int>("InServiceTrainingHours");
 
                     b.Property<DateTime>("InServiceTrainingStartDate");
+
+                    b.Property<DateTime>("InsuranceEndDate");
+
+                    b.Property<DateTime>("InsuranceStartDate");
 
                     b.Property<DateTime>("JSOLocalBGSEndDate");
 

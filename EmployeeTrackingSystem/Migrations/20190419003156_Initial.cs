@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EmployeeTrackingSystem.Data.Migrations
+namespace EmployeeTrackingSystem.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,6 +45,89 @@ namespace EmployeeTrackingSystem.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Employee",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    State = table.Column<string>(nullable: true),
+                    Zip = table.Column<int>(nullable: false),
+                    Phone = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    HireDate = table.Column<DateTime>(nullable: false),
+                    LicenseNumber = table.Column<string>(nullable: true),
+                    CBHT = table.Column<bool>(nullable: false),
+                    APDSupportedLiving = table.Column<bool>(nullable: false),
+                    APDSupportedEmployement = table.Column<bool>(nullable: false),
+                    ARNP = table.Column<bool>(nullable: false),
+                    DCFHippastartDate = table.Column<DateTime>(nullable: false),
+                    DCFHippaEndDate = table.Column<DateTime>(nullable: false),
+                    VehicleRegistrationStartDate = table.Column<DateTime>(nullable: false),
+                    VehicleRegistrationEndDate = table.Column<DateTime>(nullable: false),
+                    VehicleInsuranceCardStartDate = table.Column<DateTime>(nullable: false),
+                    VehicleInsuranceCardEndDate = table.Column<DateTime>(nullable: false),
+                    YearlyEvaluationStartDate = table.Column<DateTime>(nullable: false),
+                    YearlyEvaluationEndDate = table.Column<DateTime>(nullable: false),
+                    TargetCaseManagmentStartDate = table.Column<DateTime>(nullable: false),
+                    TargetCaseManagmentEndDate = table.Column<DateTime>(nullable: false),
+                    AffidavitOfGoodMoralCharacterStartDate = table.Column<DateTime>(nullable: false),
+                    AffidavitOfGoodMoralCharacterEndDate = table.Column<DateTime>(nullable: false),
+                    FDLEBGSStartDate = table.Column<DateTime>(nullable: false),
+                    FDLEBGSEndDate = table.Column<DateTime>(nullable: false),
+                    JSOLocalBGSStartDate = table.Column<DateTime>(nullable: false),
+                    JSOLocalBGSEndDate = table.Column<DateTime>(nullable: false),
+                    DEAStartDate = table.Column<DateTime>(nullable: false),
+                    DEAEndDate = table.Column<DateTime>(nullable: false),
+                    ARNPLicenceStartDate = table.Column<DateTime>(nullable: false),
+                    ARNPLicenceEndDate = table.Column<DateTime>(nullable: false),
+                    InsuranceStartDate = table.Column<DateTime>(nullable: false),
+                    InsuranceEndDate = table.Column<DateTime>(nullable: false),
+                    ClinicalCompetenceStartDate = table.Column<DateTime>(nullable: false),
+                    ClinicalCompetenceEndDate = table.Column<DateTime>(nullable: false),
+                    ClientPersonalSafetyStartDate = table.Column<DateTime>(nullable: false),
+                    ClientPersonalSafetyEndDate = table.Column<DateTime>(nullable: false),
+                    PatientConfidentialityStartDate = table.Column<DateTime>(nullable: false),
+                    PatientConfidentialityEndDate = table.Column<DateTime>(nullable: false),
+                    EthicalProfessionalStartDate = table.Column<DateTime>(nullable: false),
+                    EthicalProfessionalEndDate = table.Column<DateTime>(nullable: false),
+                    ElectivesStartDate = table.Column<DateTime>(nullable: false),
+                    ElectivesEndDate = table.Column<DateTime>(nullable: false),
+                    ZeroToleranceStartDate = table.Column<DateTime>(nullable: false),
+                    ZeroToleranceEndDate = table.Column<DateTime>(nullable: false),
+                    DCCCStartDate = table.Column<DateTime>(nullable: false),
+                    DCCCEndDate = table.Column<DateTime>(nullable: false),
+                    FirstAidStartDate = table.Column<DateTime>(nullable: false),
+                    FirstAidEndDate = table.Column<DateTime>(nullable: false),
+                    APDHIPAAStartDate = table.Column<DateTime>(nullable: false),
+                    APDHIPAAEndDate = table.Column<DateTime>(nullable: false),
+                    CPRStartDate = table.Column<DateTime>(nullable: false),
+                    CPREndDate = table.Column<DateTime>(nullable: false),
+                    HIVAIDSStartDate = table.Column<DateTime>(nullable: false),
+                    HIVAIDSEndDate = table.Column<DateTime>(nullable: false),
+                    SocialSecurityStartDate = table.Column<DateTime>(nullable: false),
+                    SocialSecurityEndDate = table.Column<DateTime>(nullable: false),
+                    InServiceTrainingStartDate = table.Column<DateTime>(nullable: false),
+                    InServiceTrainingEndDate = table.Column<DateTime>(nullable: false),
+                    InServiceTrainingHours = table.Column<int>(nullable: false),
+                    RelatedToEmploymentStartDate = table.Column<DateTime>(nullable: false),
+                    RelatedToEmploymentEndDate = table.Column<DateTime>(nullable: false),
+                    RelatedToEmploymentHours = table.Column<int>(nullable: false),
+                    MedicationAdministrationStartDate = table.Column<DateTime>(nullable: false),
+                    MedicationAdministrationEndDate = table.Column<DateTime>(nullable: false),
+                    ReactiveStrategiesStartDate = table.Column<DateTime>(nullable: false),
+                    ReactiveStrategiesEndDate = table.Column<DateTime>(nullable: false),
+                    Notes = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employee", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -93,8 +176,8 @@ namespace EmployeeTrackingSystem.Data.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    ProviderKey = table.Column<string>(nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: false)
                 },
@@ -138,8 +221,8 @@ namespace EmployeeTrackingSystem.Data.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
-                    LoginProvider = table.Column<string>(maxLength: 128, nullable: false),
-                    Name = table.Column<string>(maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -209,6 +292,9 @@ namespace EmployeeTrackingSystem.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Employee");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
